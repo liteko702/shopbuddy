@@ -411,6 +411,148 @@
     }
   ],
 
+  "retailers": [
+    {
+      "name": "Scan.co.uk",
+      "url": "https://www.scan.co.uk",
+      "icon": "🏆",
+      "type": "Specialist",
+      "pros": ["UK's leading PC component retailer", "Excellent stock and range", "Fast delivery", "Good customer service", "3XS custom-built PCs"],
+      "cons": ["Prices sometimes slightly higher than Amazon"],
+      "bestFor": "Best all-round UK PC parts retailer. First place to check."
+    },
+    {
+      "name": "Overclockers UK",
+      "url": "https://www.overclockers.co.uk",
+      "icon": "⚡",
+      "type": "Specialist",
+      "pros": ["Huge GPU and CPU stock", "Enthusiast-focused", "Great for high-end parts", "Good bundle deals", "Forum community"],
+      "cons": ["Can be pricier on accessories", "Website less intuitive"],
+      "bestFor": "Best for GPUs and enthusiast parts. Often has stock when others don't."
+    },
+    {
+      "name": "Amazon UK",
+      "url": "https://www.amazon.co.uk",
+      "icon": "📦",
+      "type": "General",
+      "pros": ["Often cheapest on RAM, SSDs, cases", "Prime next-day delivery", "Easy returns", "Price drops frequently"],
+      "cons": ["Check 'Sold by Amazon' — third-party sellers can be dodgy", "Less expert advice"],
+      "bestFor": "Best for RAM, SSDs, cases, peripherals. Always price-compare here."
+    },
+    {
+      "name": "CCL Computers",
+      "url": "https://www.cclonline.com",
+      "icon": "💰",
+      "type": "Specialist",
+      "pros": ["Competitive pricing", "Good bundle deals", "UK-based", "Custom PC builder"],
+      "cons": ["Smaller range than Scan", "Less well-known"],
+      "bestFor": "Often has the best price on CPUs and motherboard bundles."
+    },
+    {
+      "name": "Ebuyer",
+      "url": "https://www.ebuyer.com",
+      "icon": "🛒",
+      "type": "Specialist",
+      "pros": ["Good prices on storage and peripherals", "Fast delivery", "Business accounts available"],
+      "cons": ["Returns process can be slow", "Less GPU stock"],
+      "bestFor": "Good for SSDs, monitors, and peripherals."
+    },
+    {
+      "name": "Currys",
+      "url": "https://www.currys.co.uk",
+      "icon": "🏪",
+      "type": "High Street",
+      "pros": ["Physical stores for collection", "Finance options (buy now pay later)", "Good monitor range", "Price match guarantee"],
+      "cons": ["Higher prices on components", "Limited enthusiast parts", "Staff knowledge varies"],
+      "bestFor": "Best for monitors, pre-builts, and if you want to see before you buy."
+    },
+    {
+      "name": "Novatech",
+      "url": "https://www.novatech.co.uk",
+      "icon": "🔧",
+      "type": "Specialist",
+      "pros": ["Good prices", "UK-based with showroom", "Custom builds", "Business-friendly"],
+      "cons": ["Smaller range", "Delivery can be slower"],
+      "bestFor": "Worth checking for competitive pricing, especially on bundles."
+    },
+    {
+      "name": "PCPartPicker UK",
+      "url": "https://uk.pcpartpicker.com",
+      "icon": "🔍",
+      "type": "Price Comparison",
+      "pros": ["Compares prices across ALL UK retailers", "Compatibility checker", "Build guides", "Community builds for inspiration"],
+      "cons": ["Not a shop — links out to retailers", "Prices not always live"],
+      "bestFor": "START HERE. Build your parts list, check compatibility, find the cheapest price for each part."
+    }
+  ],
+
+  "partsGuide": [
+    {
+      "tier": "budget",
+      "name": "Office & Web PC — ~£350",
+      "parts": [
+        { "component": "CPU", "pick": "AMD Ryzen 5 5600G", "price": "£100", "note": "Integrated graphics — no GPU needed", "where": "Amazon, Scan, CCL" },
+        { "component": "Motherboard", "pick": "MSI B550M PRO-VDH (mATX)", "price": "£70", "note": "AM4 socket, Wi-Fi optional add-on", "where": "Scan, Amazon" },
+        { "component": "RAM", "pick": "16GB (2×8GB) DDR4-3200 Corsair Vengeance", "price": "£30", "note": "Enable XMP in BIOS for rated speed", "where": "Amazon (often cheapest)" },
+        { "component": "Storage", "pick": "500GB WD Blue SN580 NVMe", "price": "£35", "note": "Plenty for Office/web. Add more later.", "where": "Amazon, Scan, Ebuyer" },
+        { "component": "PSU", "pick": "Corsair CV450 450W 80+ Bronze", "price": "£40", "note": "More than enough for no-GPU build", "where": "Scan, Amazon" },
+        { "component": "Case", "pick": "Tecware Forge M (mATX)", "price": "£40", "note": "Compact, mesh front, good airflow", "where": "Amazon" },
+        { "component": "CPU Cooler", "pick": "AMD stock cooler (included)", "price": "Free", "note": "Comes in the box with the 5600G", "where": "—" },
+        { "component": "Windows", "pick": "Windows 11 Home (OEM key)", "price": "£15-20", "note": "OEM keys on trusted resellers. Or use unactivated.", "where": "Amazon, CDKeys" }
+      ],
+      "total": "~£330-370",
+      "pcpartpicker": "https://uk.pcpartpicker.com/guide/TydTwP/entry-level-amd-gaming-build"
+    },
+    {
+      "tier": "mid",
+      "name": "1080p Gaming PC — ~£700",
+      "parts": [
+        { "component": "CPU", "pick": "AMD Ryzen 5 9600X", "price": "£210", "note": "6-core, excellent for gaming. AM5 platform.", "where": "Scan, CCL, Amazon" },
+        { "component": "Motherboard", "pick": "MSI B850 Tomahawk WiFi (ATX)", "price": "£160", "note": "AM5 socket, Wi-Fi 7, USB-C, future-proof", "where": "Scan, Overclockers" },
+        { "component": "GPU", "pick": "AMD RX 7600 8GB / RTX 4060 8GB", "price": "£240-270", "note": "Solid 1080p. RX 7600 slightly cheaper, RTX 4060 has DLSS", "where": "Overclockers, Scan, Amazon" },
+        { "component": "RAM", "pick": "16GB (2×8GB) DDR5-5600 Kingston Fury", "price": "£45", "note": "DDR5 required for AM5. Enable EXPO.", "where": "Amazon, Scan" },
+        { "component": "Storage", "pick": "1TB WD Black SN770 NVMe Gen 4", "price": "£65", "note": "Fast, reliable, good value Gen 4", "where": "Amazon (often cheapest), Scan" },
+        { "component": "PSU", "pick": "Corsair RM650 650W 80+ Gold", "price": "£70", "note": "Fully modular, quiet, reliable. Headroom for upgrades.", "where": "Scan, Amazon" },
+        { "component": "Case", "pick": "Corsair 4000D Airflow", "price": "£65", "note": "Excellent airflow, cable management, popular choice", "where": "Scan, Amazon, Currys" },
+        { "component": "CPU Cooler", "pick": "Thermalright Peerless Assassin 120", "price": "£30", "note": "Dual tower, excellent value. Beats £60 coolers.", "where": "Amazon" }
+      ],
+      "total": "~£650-750",
+      "pcpartpicker": "https://uk.pcpartpicker.com/guide/LQMnTW/modest-amd-gaming-build"
+    },
+    {
+      "tier": "premium",
+      "name": "1440p Sweet Spot PC — ~£1,100",
+      "parts": [
+        { "component": "CPU", "pick": "AMD Ryzen 7 9700X", "price": "£260", "note": "8-core, great for gaming + multitasking", "where": "Scan (£260), Currys, Amazon" },
+        { "component": "Motherboard", "pick": "MSI B850 Tomahawk WiFi", "price": "£160", "note": "Same great board, pairs perfectly", "where": "Scan, Overclockers" },
+        { "component": "GPU", "pick": "AMD RX 9070 XT 16GB", "price": "£560", "note": "16GB VRAM! Best value GPU in 2026. Or RTX 5070 (£550, 12GB)", "where": "Overclockers (£560), Scan" },
+        { "component": "RAM", "pick": "32GB (2×16GB) DDR5-6000 G.Skill Flare X5", "price": "£90", "note": "Sweet spot speed for Ryzen 9000", "where": "Amazon, Scan" },
+        { "component": "Storage", "pick": "1TB Samsung 990 Pro NVMe Gen 4", "price": "£80", "note": "Premium drive, fast and reliable", "where": "Amazon, Scan, Ebuyer" },
+        { "component": "PSU", "pick": "Corsair RM750e 750W 80+ Gold", "price": "£85", "note": "Plenty for 9070 XT. Fully modular.", "where": "Scan, Amazon" },
+        { "component": "Case", "pick": "Fractal Design North (mesh)", "price": "£100", "note": "Beautiful, excellent airflow, quiet", "where": "Scan, Overclockers" },
+        { "component": "CPU Cooler", "pick": "Arctic Liquid Freezer II 240 AIO", "price": "£55", "note": "Best value AIO. Keeps 9700X cool and quiet.", "where": "Scan, Amazon" }
+      ],
+      "total": "~£1,050-1,200",
+      "pcpartpicker": "https://uk.pcpartpicker.com/guide/jFwrxr/great-amd-gaming-build"
+    },
+    {
+      "tier": "flagship",
+      "name": "4K Ultra PC — ~£2,800",
+      "parts": [
+        { "component": "CPU", "pick": "AMD Ryzen 9 9900X", "price": "£380", "note": "12-core beast. Or 9950X (£520) for 16 cores.", "where": "Scan, CCL" },
+        { "component": "Motherboard", "pick": "ASUS X870E Hero WiFi", "price": "£350", "note": "Top-tier X870E. Thunderbolt, USB4, premium VRMs.", "where": "Scan, Overclockers" },
+        { "component": "GPU", "pick": "NVIDIA RTX 5090 32GB", "price": "£2,000", "note": "The absolute fastest. 32GB VRAM. Massive.", "where": "Scan (when in stock), Overclockers" },
+        { "component": "RAM", "pick": "64GB (2×32GB) DDR5-6000 CL30", "price": "£180", "note": "For video editing and heavy workloads", "where": "Amazon, Scan" },
+        { "component": "Storage", "pick": "2TB Samsung 990 Pro + 4TB WD Black", "price": "£160 + £250", "note": "Fast boot drive + mass storage", "where": "Amazon, Scan" },
+        { "component": "PSU", "pick": "Corsair HX1000 1000W 80+ Platinum", "price": "£170", "note": "RTX 5090 is power-hungry. Don't skimp.", "where": "Scan" },
+        { "component": "Case", "pick": "Lian Li O11 Dynamic EVO", "price": "£130", "note": "Flagship case, dual-chamber, beautiful", "where": "Scan, Overclockers" },
+        { "component": "CPU Cooler", "pick": "Arctic Liquid Freezer III 360 AIO", "price": "£80", "note": "360mm AIO for max cooling on 9900X", "where": "Scan, Amazon" }
+      ],
+      "total": "~£2,700-3,200",
+      "pcpartpicker": "https://uk.pcpartpicker.com/guide/rWQzK8/glorious-amd-gamingstreaming-build"
+    }
+  ],
+
   "tiers": {
     "budget": { "label": "Office / Basic", "range": "Under £500", "icon": "💰", "description": "Web browsing, Office, streaming. No gaming GPU needed." },
     "mid": { "label": "1080p Gaming / All-rounder", "range": "£500-900", "icon": "⭐", "description": "Solid gaming at 1080p, good for everything else. Best value." },

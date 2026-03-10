@@ -616,6 +616,87 @@ function renderResults(data) {
     </div>
   `;
 
+    // Parts guide (PC-specific or any category with partsGuide)
+    if (currentCat.partsGuide) {
+      const matchedTier = currentCat.partsGuide.find(p => p.tier === data.answeredBudget)
+        || currentCat.partsGuide.find(p => p.tier === topPick.tier)
+        || currentCat.partsGuide[1];
+
+      html += `
+        <div class="card" style="margin-top:24px">
+          <h3>🛒 Buy Each Part Separately — ${matchedTier.name}</h3>
+          <p style="color:var(--text2);margin-bottom:16px">Exactly what to buy and where to get the best price:</p>
+          <div style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse">
+              <thead><tr style="border-bottom:2px solid var(--border)">
+                <th style="text-align:left;padding:10px;color:var(--text2);font-size:0.85em">Component</th>
+                <th style="text-align:left;padding:10px;color:var(--text2);font-size:0.85em">Recommended</th>
+                <th style="text-align:right;padding:10px;color:var(--text2);font-size:0.85em">Price</th>
+                <th style="text-align:left;padding:10px;color:var(--text2);font-size:0.85em">Where to Buy</th>
+              </tr></thead>
+              <tbody>
+                ${matchedTier.parts.map(p => `<tr style="border-bottom:1px solid var(--border)">
+                  <td style="padding:10px;font-weight:600;color:var(--accent2)">${p.component}</td>
+                  <td style="padding:10px"><strong>${p.pick}</strong><div style="font-size:0.8em;color:var(--text2)">${p.note}</div></td>
+                  <td style="padding:10px;text-align:right;font-weight:700;color:var(--green);white-space:nowrap">${p.price}</td>
+                  <td style="padding:10px;color:var(--text2);font-size:0.9em">${p.where}</td>
+                </tr>`).join('')}
+                <tr style="border-top:2px solid var(--accent)">
+                  <td style="padding:12px;font-weight:700;font-size:1.1em" colspan="2">TOTAL</td>
+                  <td style="padding:12px;text-align:right;font-weight:800;font-size:1.1em;color:var(--accent2)">${matchedTier.total}</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          ${matchedTier.pcpartpicker ? `<div style="margin-top:16px;text-align:center"><a href="${matchedTier.pcpartpicker}" target="_blank" class="buy-btn buy-btn-primary" style="text-decoration:none">🔍 See on PCPartPicker →</a></div>` : ''}
+          <div style="margin-top:20px;padding:16px;background:var(--bg);border-radius:10px">
+            <strong style="color:var(--accent2)">💡 Pro Tips:</strong>
+            <ul style="color:var(--text2);margin:8px 0 0 20px;font-size:0.9em">
+              <li><strong>PCPartPicker</strong> checks compatibility AND finds the cheapest price across all UK shops</li>
+              <li><strong>Check multiple shops</strong> — prices differ £20-50 per part between retailers</li>
+              <li><strong>Buy GPU + CPU first</strong> — they go out of stock fastest</li>
+              <li><strong>Amazon for RAM & SSDs</strong> — usually cheapest with Prime delivery</li>
+              <li><strong>Budget £15-30 extra</strong> for Windows key, cable ties, maybe an extra fan</li>
+            </ul>
+          </div>
+        </div>`;
+
+      // Other tiers as collapsible
+      const otherTiers = currentCat.partsGuide.filter(p => p.tier !== matchedTier.tier);
+      if (otherTiers.length) {
+        html += `<div class="card"><h3>📋 Other Budget Tiers</h3>
+          ${otherTiers.map(t => `<details style="margin-bottom:8px;background:var(--bg);border-radius:8px">
+            <summary style="padding:12px;cursor:pointer;font-weight:600;color:var(--accent2)">${t.name} (${t.total})</summary>
+            <div style="padding:0 12px 12px;overflow-x:auto">
+              <table style="width:100%;border-collapse:collapse;margin-top:8px">
+                ${t.parts.map(p => `<tr style="border-bottom:1px solid var(--border)">
+                  <td style="padding:8px;font-weight:600;color:var(--accent2);width:100px">${p.component}</td>
+                  <td style="padding:8px"><strong>${p.pick}</strong> <span style="color:var(--text2);font-size:0.8em">— ${p.note}</span></td>
+                  <td style="padding:8px;text-align:right;color:var(--green);font-weight:700;white-space:nowrap">${p.price}</td>
+                  <td style="padding:8px;color:var(--text2);font-size:0.85em">${p.where}</td>
+                </tr>`).join('')}
+              </table>
+              ${t.pcpartpicker ? `<a href="${t.pcpartpicker}" target="_blank" style="display:inline-block;margin-top:8px;color:var(--accent2);font-size:0.9em">🔍 PCPartPicker →</a>` : ''}
+            </div>
+          </details>`).join('')}
+        </div>`;
+      }
+    }
+
+    // Retailers guide
+    if (currentCat.retailers) {
+      html += `<div class="card"><h3>🏪 Where to Buy — UK Retailers</h3>
+        <p style="color:var(--text2);margin-bottom:16px">Best places to buy PC parts in the UK:</p>
+        ${currentCat.retailers.map(r => `<div style="padding:14px;background:var(--bg);border-radius:10px;margin-bottom:8px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center">
+          <div style="font-size:1.8em">${r.icon}</div>
+          <div><strong>${r.name}</strong> <span style="color:var(--text2);font-size:0.8em">(${r.type})</span>
+            <div style="color:var(--text2);font-size:0.85em;margin-top:2px">${r.bestFor}</div></div>
+          <a href="${r.url}" target="_blank" class="buy-btn buy-btn-secondary" style="text-decoration:none;white-space:nowrap;font-size:0.85em">Visit →</a>
+        </div>`).join('')}
+      </div>`;
+    }
+
   html += `
     <div style="text-align:center;margin-top:24px">
       <button class="btn btn-secondary" onclick="startQuestions()" style="margin-right:12px">🔄 Change My Answers</button>
