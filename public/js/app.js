@@ -566,4 +566,3 @@ function renderResults(data) {
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-</script>
