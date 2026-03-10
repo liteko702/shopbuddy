@@ -1,0 +1,349 @@
+{
+  "id": "robot-vacuum",
+  "name": "Robot Vacuum Cleaner",
+  "icon": "🤖",
+  "emoji": "🧹",
+  "tagline": "Find the perfect robot vacuum for your home",
+  "intro": "Robot vacuums have evolved massively — from basic bump-and-go pucks to AI-powered cleaning machines with self-emptying bases, mopping, and obstacle avoidance. Prices range from £150 to £1,500+. The right one depends on your home, your floors, your pets, and how hands-off you want to be.",
+
+  "thingsToConsider": [
+    {
+      "title": "Navigation Technology",
+      "importance": "critical",
+      "summary": "How the robot maps and moves around your home. The biggest factor in cleaning quality.",
+      "detail": "Cheap robots bounce randomly (bump-and-go). Mid-range use gyroscopes or cameras. Premium use LiDAR (laser mapping) which creates accurate floor plans and cleans systematically. LiDAR models clean faster, miss fewer spots, and let you set no-go zones via the app.",
+      "recommendation": "LiDAR is worth it if you can afford it. Camera-based (vSLAM) is a solid middle ground. Avoid random navigation for anything bigger than a studio flat."
+    },
+    {
+      "title": "Suction Power (Pa)",
+      "importance": "important",
+      "summary": "How strongly the robot pulls up dirt. Measured in Pascals (Pa).",
+      "detail": "Budget: 2,000-4,000 Pa. Mid-range: 5,000-8,000 Pa. Premium: 10,000-15,000+ Pa. Higher suction picks up more from carpets and gets embedded pet hair. Most robots adjust suction automatically — boosting on carpet, quieter on hard floors.",
+      "recommendation": "If you have mostly hard floors, 4,000+ Pa is fine. Carpets or pets: aim for 6,000+ Pa. Deep pile carpet: 10,000+ Pa."
+    },
+    {
+      "title": "Self-Emptying Base",
+      "importance": "important",
+      "summary": "A dock that automatically empties the robot's dustbin into a larger bag/container.",
+      "detail": "Without self-emptying, you need to empty the small onboard dustbin after every 1-2 cleans. Self-emptying bases hold 30-60 days of dust. Some use bags (£3-5 each, replaced monthly), some are bagless. This is the #1 convenience feature.",
+      "recommendation": "Strongly recommended if you want a hands-off experience. The price premium (£100-200) is worth it for most people."
+    },
+    {
+      "title": "Mopping Capability",
+      "importance": "nice-to-have",
+      "summary": "Many modern robot vacuums can also mop hard floors.",
+      "detail": "Basic mopping: a damp pad dragged behind (barely effective). Vibrating/sonic mopping: pad vibrates to scrub (much better). Rotating dual pads: two spinning mop pads with downward pressure (best). Some premium models lift the mop pads when on carpet to avoid wetting it. Hot water washing of mop pads in the base station is a top-tier feature.",
+      "recommendation": "If you have lots of hard floors, look for vibrating or rotating mop pads. Basic drag-mopping is barely worth having."
+    },
+    {
+      "title": "Obstacle Avoidance",
+      "importance": "important",
+      "summary": "How well the robot avoids cables, shoes, pet toys, and other floor clutter.",
+      "detail": "Cheap robots have no obstacle avoidance — they'll eat cables and get stuck on socks. Mid-range use cameras or structured light to detect and avoid objects. Premium models use AI-powered cameras that can identify specific objects (shoes, cables, pet waste) and avoid them.",
+      "recommendation": "Essential if you have kids, pets, or don't want to baby-proof your floors before every clean."
+    },
+    {
+      "title": "Battery Life & Coverage",
+      "importance": "moderate",
+      "summary": "How much area the robot can clean on a single charge.",
+      "detail": "Budget: 90-120 mins (60-80m²). Mid-range: 150-180 mins (120-180m²). Premium: 180-300 mins (200-300m²). Good robots will return to charge and resume cleaning automatically (recharge & resume). Most UK homes are well within range of mid-range models.",
+      "recommendation": "For a typical 3-bed semi (~80m²), any decent robot will handle it in one charge. Larger homes (150m²+) need recharge & resume."
+    },
+    {
+      "title": "Noise Level",
+      "importance": "moderate",
+      "summary": "How loud the robot is while cleaning.",
+      "detail": "Typical range: 55-75 dB. 55 dB is like a quiet conversation. 70+ dB is like a standard vacuum. Most robots are quieter than a traditional vacuum but louder than you'd expect. Many have a 'quiet' mode that reduces suction but drops noise significantly.",
+      "recommendation": "If you plan to run it while home or at night, check the quiet mode noise level. If you run it while out, noise doesn't matter."
+    },
+    {
+      "title": "App & Smart Home Integration",
+      "importance": "moderate",
+      "summary": "How you control the robot — app features, Alexa/Google support, scheduling.",
+      "detail": "All decent robots have apps for scheduling, maps, and controls. Look for: room-specific cleaning, no-go zones, cleaning history, suction/water level per room. Alexa/Google Home support lets you voice-start cleaning. Some work with Matter/HomeKit.",
+      "recommendation": "The app experience varies wildly. Roborock, Ecovacs, and iRobot have the best apps. Check reviews for app quality."
+    },
+    {
+      "title": "Maintenance & Running Costs",
+      "importance": "often-overlooked",
+      "summary": "Filters, brushes, mop pads, and dust bags need replacing regularly.",
+      "detail": "Typical annual costs: Main brush (£10-20, every 6-12 months), side brushes (£5-10, every 3-6 months), filter (£8-15, every 2-4 months), dust bags (£3-5 each, monthly with self-empty). Third-party alternatives are much cheaper than official parts. Budget £30-60/year for consumables.",
+      "recommendation": "Check availability and price of replacement parts before buying. Popular brands (Roborock, Ecovacs, iRobot) have cheap third-party parts on Amazon."
+    }
+  ],
+
+  "jargon": [
+    { "term": "LiDAR", "meaning": "Light Detection and Ranging — a spinning laser sensor that creates accurate 3D maps of your home. The gold standard for robot vacuum navigation." },
+    { "term": "vSLAM", "meaning": "Visual Simultaneous Localization and Mapping — uses a camera to navigate. Cheaper than LiDAR but can struggle in low light." },
+    { "term": "Pa (Pascals)", "meaning": "Unit of suction power. Higher = stronger suction. 5,000 Pa is decent, 10,000+ Pa is powerful." },
+    { "term": "Recharge & Resume", "meaning": "Robot returns to dock when battery is low, charges up, then continues cleaning where it left off. Essential for large homes." },
+    { "term": "No-Go Zones", "meaning": "Areas you mark in the app where the robot won't go. Virtual walls without physical barriers." },
+    { "term": "HEPA Filter", "meaning": "High-Efficiency Particulate Air filter — captures 99.97% of particles. Important for allergy sufferers." },
+    { "term": "Auto Mop Lifting", "meaning": "Robot automatically raises the mop pads when it detects carpet, so it doesn't wet your rugs." },
+    { "term": "DuoRoller / Dual Rubber Rollers", "meaning": "Two rubber extractors instead of a bristle brush. Better for pet hair — hair doesn't tangle around them." },
+    { "term": "Hot Water Mop Washing", "meaning": "The base station washes the mop pads with hot water after cleaning. Keeps them hygienic and removes grease." },
+    { "term": "dB (Decibels)", "meaning": "Noise measurement. 50 dB = quiet office. 60 dB = normal conversation. 70 dB = shower running." },
+    { "term": "Carpet Boost", "meaning": "Robot automatically increases suction when it detects carpet for deeper cleaning." },
+    { "term": "Structured Light", "meaning": "Projects infrared dots to detect objects in 3D. Used for obstacle avoidance." },
+    { "term": "Base Station / Dock", "meaning": "Where the robot lives when not cleaning. Basic docks just charge. Premium docks empty dust, wash mops, refill water, and dry mop pads." }
+  ],
+
+  "questions": [
+    {
+      "id": "floors",
+      "question": "What type of floors do you mostly have?",
+      "options": [
+        { "label": "Mostly hard floors", "icon": "🪵", "value": "hard", "desc": "Wood, tile, laminate, vinyl" },
+        { "label": "Mostly carpet", "icon": "🟫", "value": "carpet", "desc": "Fitted carpet, thick rugs" },
+        { "label": "Mix of both", "icon": "🔀", "value": "mixed", "desc": "Hard floors downstairs, carpet upstairs" }
+      ],
+      "impact": { "hard": { "mop": 2, "suction": 0 }, "carpet": { "suction": 2, "mop": -1 }, "mixed": { "suction": 1, "mop": 1, "mopLift": 2 } }
+    },
+    {
+      "id": "pets",
+      "question": "Do you have pets?",
+      "options": [
+        { "label": "No pets", "icon": "🚫", "value": "none", "desc": "" },
+        { "label": "Cat(s)", "icon": "🐱", "value": "cat", "desc": "Short or long hair" },
+        { "label": "Dog(s)", "icon": "🐕", "value": "dog", "desc": "Any breed" },
+        { "label": "Multiple / shedding pets", "icon": "🐾", "value": "heavy", "desc": "Lots of pet hair" }
+      ],
+      "impact": { "none": {}, "cat": { "suction": 1, "obstacle": 1 }, "dog": { "suction": 2, "obstacle": 2, "selfEmpty": 1 }, "heavy": { "suction": 3, "selfEmpty": 2, "obstacle": 2 } }
+    },
+    {
+      "id": "size",
+      "question": "How big is the area you want cleaned?",
+      "options": [
+        { "label": "Small flat", "icon": "🏢", "value": "small", "desc": "Studio to 2-bed, under 60m²" },
+        { "label": "Medium house", "icon": "🏠", "value": "medium", "desc": "2-3 bed, 60-120m²" },
+        { "label": "Large house", "icon": "🏡", "value": "large", "desc": "4+ bed, 120m²+" },
+        { "label": "Multiple floors", "icon": "🏗️", "value": "multi", "desc": "Need to carry between floors" }
+      ],
+      "impact": { "small": {}, "medium": { "nav": 1, "battery": 1 }, "large": { "nav": 2, "battery": 2, "selfEmpty": 1 }, "multi": { "weight": 1, "nav": 1 } }
+    },
+    {
+      "id": "clutter",
+      "question": "How cluttered are your floors?",
+      "options": [
+        { "label": "Very tidy", "icon": "✨", "value": "tidy", "desc": "Floors always clear" },
+        { "label": "Some clutter", "icon": "👟", "value": "some", "desc": "Shoes, cables, occasional toys" },
+        { "label": "Kids / very cluttered", "icon": "🧸", "value": "messy", "desc": "Toys, cables, clothes on floor" }
+      ],
+      "impact": { "tidy": {}, "some": { "obstacle": 1 }, "messy": { "obstacle": 3 } }
+    },
+    {
+      "id": "handsoff",
+      "question": "How hands-off do you want it?",
+      "options": [
+        { "label": "Happy to maintain it", "icon": "🔧", "value": "active", "desc": "Empty dustbin, clean filters regularly" },
+        { "label": "Mostly hands-off", "icon": "😌", "value": "passive", "desc": "Occasional maintenance only" },
+        { "label": "Fully autonomous", "icon": "🤖", "value": "auto", "desc": "Just want it to work without thinking" }
+      ],
+      "impact": { "active": {}, "passive": { "selfEmpty": 2 }, "auto": { "selfEmpty": 3, "mopWash": 2 } }
+    },
+    {
+      "id": "budget",
+      "question": "What's your budget?",
+      "options": [
+        { "label": "Under £250", "icon": "💰", "value": "budget", "desc": "Entry level" },
+        { "label": "£250-500", "icon": "💰💰", "value": "mid", "desc": "Good value sweet spot" },
+        { "label": "£500-800", "icon": "💰💰💰", "value": "premium", "desc": "Premium features" },
+        { "label": "£800+", "icon": "💎", "value": "flagship", "desc": "Best of the best" }
+      ]
+    }
+  ],
+
+  "products": [
+    {
+      "id": "roborock-q5-pro",
+      "name": "Roborock Q5 Pro+",
+      "brand": "Roborock",
+      "tier": "budget",
+      "price": 230,
+      "priceRange": "£200-250",
+      "rating": 4.4,
+      "nav": "LiDAR",
+      "suction": 5500,
+      "mop": false,
+      "selfEmpty": true,
+      "obstacleAvoidance": false,
+      "battery": 150,
+      "noise": 67,
+      "features": ["LiDAR navigation", "Self-emptying base", "App control", "No-go zones", "Carpet boost"],
+      "missing": ["No mopping", "No obstacle avoidance", "Basic brush design"],
+      "bestFor": "Best budget pick with self-emptying. Great for simple homes without too much floor clutter.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=Roborock+Q5+Pro%2B" },
+        { "store": "Roborock", "url": "https://www.roborock.com" }
+      ]
+    },
+    {
+      "id": "eufy-x10-omni",
+      "name": "Eufy X10 Pro Omni",
+      "brand": "Eufy",
+      "tier": "mid",
+      "price": 450,
+      "priceRange": "£400-500",
+      "rating": 4.5,
+      "nav": "LiDAR + Camera AI",
+      "suction": 8000,
+      "mop": "rotating-dual",
+      "selfEmpty": true,
+      "obstacleAvoidance": true,
+      "battery": 180,
+      "noise": 65,
+      "features": ["LiDAR + AI obstacle avoidance", "8,000 Pa suction", "Dual rotating mop pads", "Self-emptying + mop washing", "Auto mop lifting"],
+      "missing": ["No hot water mop wash", "Base station is large", "Mop pads need manual replacement"],
+      "bestFor": "Outstanding mid-range all-rounder. Does everything well at a competitive price.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=Eufy+X10+Pro+Omni" },
+        { "store": "Eufy", "url": "https://www.eufy.com" }
+      ]
+    },
+    {
+      "id": "roborock-q-revo-maxv",
+      "name": "Roborock Q Revo MaxV",
+      "brand": "Roborock",
+      "tier": "mid",
+      "price": 500,
+      "priceRange": "£450-550",
+      "rating": 4.6,
+      "nav": "LiDAR + Camera AI",
+      "suction": 7000,
+      "mop": "rotating-dual",
+      "selfEmpty": true,
+      "obstacleAvoidance": true,
+      "battery": 180,
+      "noise": 63,
+      "features": ["LiDAR + ReactiveAI obstacle avoidance", "Dual spinning mop pads", "Self-emptying + hot water mop washing", "Auto mop lifting", "Edge mopping"],
+      "missing": ["Suction lower than flagships", "App can be complex", "Base station needs periodic cleaning"],
+      "bestFor": "Best mid-range vacuum+mop combo. Hot water mop washing keeps mop pads hygienic.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=Roborock+Q+Revo+MaxV" },
+        { "store": "Roborock", "url": "https://www.roborock.com" }
+      ]
+    },
+    {
+      "id": "dreame-l20-ultra",
+      "name": "Dreame L20 Ultra",
+      "brand": "Dreame",
+      "tier": "premium",
+      "price": 650,
+      "priceRange": "£600-750",
+      "rating": 4.6,
+      "nav": "LiDAR + 3D Structured Light",
+      "suction": 7000,
+      "mop": "rotating-dual",
+      "selfEmpty": true,
+      "obstacleAvoidance": true,
+      "battery": 210,
+      "noise": 62,
+      "features": ["LiDAR + 3D obstacle avoidance", "Dual rotating mops", "Auto mop extend for edges", "Self-emptying + hot water mop wash + hot air drying", "Auto detergent dispenser"],
+      "missing": ["Large base station", "Premium price", "Complex initial setup"],
+      "bestFor": "Does everything and does it well. The auto-extending mop reaches edges other robots miss.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=Dreame+L20+Ultra" },
+        { "store": "Dreame", "url": "https://www.dreame.co.uk" }
+      ]
+    },
+    {
+      "id": "roborock-s8-maxv-ultra",
+      "name": "Roborock S8 MaxV Ultra",
+      "brand": "Roborock",
+      "tier": "flagship",
+      "price": 1100,
+      "priceRange": "£950-1,200",
+      "rating": 4.7,
+      "nav": "LiDAR + ReactiveAI 3.0",
+      "suction": 10000,
+      "mop": "sonic-vibrating",
+      "selfEmpty": true,
+      "obstacleAvoidance": true,
+      "battery": 240,
+      "noise": 61,
+      "features": ["10,000 Pa HyperForce suction", "ReactiveAI 3.0 obstacle avoidance", "Sonic vibrating mop (3,000 vibrations/min)", "Self-emptying + hot water mop wash + hot air drying", "DuoRoller brush system", "FlexiArm mop for edges"],
+      "missing": ["Very expensive", "Base station is huge", "Overkill for small flats"],
+      "bestFor": "The best robot vacuum you can buy. If you want the absolute top-tier and budget isn't an issue.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=Roborock+S8+MaxV+Ultra" },
+        { "store": "Roborock", "url": "https://www.roborock.com" }
+      ]
+    },
+    {
+      "id": "irobot-roomba-combo-j9",
+      "name": "iRobot Roomba Combo J9+",
+      "brand": "iRobot",
+      "tier": "premium",
+      "price": 700,
+      "priceRange": "£650-800",
+      "rating": 4.3,
+      "nav": "vSLAM + Camera AI",
+      "suction": 5000,
+      "mop": "basic-pad",
+      "selfEmpty": true,
+      "obstacleAvoidance": true,
+      "battery": 120,
+      "noise": 68,
+      "features": ["PrecisionVision Navigation", "iRobot OS smart mapping", "Self-emptying base", "Retractable mop pad", "Dirt Detect technology", "Alexa/Google built-in"],
+      "missing": ["Lower suction than Chinese competitors", "Shorter battery", "More expensive for features offered", "Basic mopping"],
+      "bestFor": "Best if you want a trusted Western brand with excellent app and customer support. Popular in the US/UK.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=iRobot+Roomba+Combo+J9%2B" },
+        { "store": "iRobot", "url": "https://www.irobot.co.uk" }
+      ]
+    },
+    {
+      "id": "ecovacs-t30-omni",
+      "name": "Ecovacs Deebot T30 Omni",
+      "brand": "Ecovacs",
+      "tier": "premium",
+      "price": 600,
+      "priceRange": "£550-700",
+      "rating": 4.5,
+      "nav": "LiDAR + AINA 2.0",
+      "suction": 11000,
+      "mop": "rotating-dual",
+      "selfEmpty": true,
+      "obstacleAvoidance": true,
+      "battery": 200,
+      "noise": 63,
+      "features": ["11,000 Pa suction", "AINA 2.0 AI obstacle avoidance", "ZeroTangle brush", "Dual rotating mops with auto-lift", "Self-empty + hot water mop wash + hot air dry", "YIKO voice assistant"],
+      "missing": ["Ecovacs app less intuitive than Roborock", "Base station is bulky", "Occasional connectivity issues"],
+      "bestFor": "Exceptional suction power at a competitive price. The ZeroTangle brush is genuinely anti-tangle.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=Ecovacs+Deebot+T30+Omni" },
+        { "store": "Ecovacs", "url": "https://www.ecovacs.com/uk" }
+      ]
+    },
+    {
+      "id": "xiaomi-x20-plus",
+      "name": "Xiaomi Robot Vacuum X20+",
+      "brand": "Xiaomi",
+      "tier": "mid",
+      "price": 400,
+      "priceRange": "£350-450",
+      "rating": 4.4,
+      "nav": "LiDAR",
+      "suction": 7000,
+      "mop": "vibrating",
+      "selfEmpty": true,
+      "obstacleAvoidance": false,
+      "battery": 160,
+      "noise": 65,
+      "features": ["LiDAR navigation", "7,000 Pa suction", "Self-emptying base", "Vibrating mop pad", "Xiaomi Home app", "Carpet detection"],
+      "missing": ["No obstacle avoidance", "Mop doesn't auto-lift", "No hot water washing"],
+      "bestFor": "Great value from a trusted brand. Good for tidy homes where obstacle avoidance isn't needed.",
+      "buyLinks": [
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=Xiaomi+Robot+Vacuum+X20%2B" },
+        { "store": "Xiaomi", "url": "https://www.mi.com/uk" }
+      ]
+    }
+  ],
+
+  "tiers": {
+    "budget": { "label": "Entry Level", "range": "Under £250", "icon": "💰", "description": "Basic navigation, decent cleaning. Good for simple homes." },
+    "mid": { "label": "Sweet Spot", "range": "£250-500", "icon": "⭐", "description": "LiDAR navigation, self-emptying, some mopping. Best value for most people." },
+    "premium": { "label": "Premium", "range": "£500-800", "icon": "💎", "description": "AI obstacle avoidance, great mop + vacuum, all the bells and whistles." },
+    "flagship": { "label": "Flagship", "range": "£800+", "icon": "👑", "description": "The absolute best. Maximum suction, best navigation, most autonomous." }
+  }
+}
