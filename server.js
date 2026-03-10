@@ -17,34 +17,25 @@ fs.readdirSync(categoriesDir).forEach(file => {
   }
 });
 
-// Full catalogue of browsable categories (loaded ones + planned)
 const catalogue = require('./data/catalogue.json');
 
-// API: List all categories (full catalogue with groups)
+// API: List all categories
 app.get('/api/categories', (req, res) => {
-  // Mark which ones are live (have full data)
-  const result = catalogue.map(group => ({
+  res.json(catalogue.map(group => ({
     ...group,
-    items: group.items.map(item => ({
-      ...item,
-      live: !!categories[item.id]
-    }))
-  }));
-  res.json(result);
+    items: group.items.map(item => ({ ...item, live: !!categories[item.id] }))
+  })));
 });
 
-// API: Search across all categories
+// API: Search
 app.get('/api/search', (req, res) => {
   const q = (req.query.q || '').toLowerCase().trim();
   if (!q) return res.json([]);
-
   const results = [];
   catalogue.forEach(group => {
     group.items.forEach(item => {
       const searchable = `${item.name} ${item.tagline} ${(item.keywords || []).join(' ')}`.toLowerCase();
-      if (searchable.includes(q)) {
-        results.push({ ...item, group: group.name, live: !!categories[item.id] });
-      }
+      if (searchable.includes(q)) results.push({ ...item, group: group.name, live: !!categories[item.id] });
     });
   });
   res.json(results);
@@ -57,28 +48,35 @@ app.get('/api/category/:id', (req, res) => {
   res.json(cat);
 });
 
-// API: Get recommendations based on answers
+// API: Get recommendations
 app.post('/api/recommend/:id', (req, res) => {
   const cat = categories[req.params.id];
   if (!cat) return res.status(404).json({ error: 'Category not found' });
 
-  const { answers } = req.body; // { questionId: selectedValue }
+  const { answers } = req.body;
   const budget = answers.budget || 'mid';
+  const tierOrder = ['budget', 'mid', 'premium', 'flagship'];
+  const budgetIdx = tierOrder.indexOf(budget);
 
-  // Score each product based on answers
   const scored = cat.products.map(product => {
     let score = 0;
     let reasons = [];
+    const blob = JSON.stringify(product).toLowerCase();
 
     // Budget match
-    const tierOrder = ['budget', 'mid', 'premium', 'flagship'];
-    const budgetIdx = tierOrder.indexOf(budget);
     const productIdx = tierOrder.indexOf(product.tier);
     const tierDiff = Math.abs(budgetIdx - productIdx);
-
     if (tierDiff === 0) { score += 30; reasons.push('Within budget'); }
     else if (tierDiff === 1) { score += 15; reasons.push(productIdx > budgetIdx ? 'Slight upgrade' : 'Under budget'); }
     else { score += 5; }
+
+    // Build preference matching (PC-specific)
+    if (answers.build_pref) {
+      const isPrebuilt = blob.includes('pre-built') || blob.includes('prebuilt');
+      if (answers.build_pref === 'prebuilt' && isPrebuilt) { score += 10; reasons.push('Pre-built — ready to go'); }
+      if (answers.build_pref === 'custom' && !isPrebuilt) { score += 10; reasons.push('Custom build — best value'); }
+      // 'either' gets no preference bonus
+    }
 
     // Feature scoring from question impacts
     cat.questions.forEach(q => {
@@ -87,75 +85,69 @@ app.post('/api/recommend/:id', (req, res) => {
       const impacts = q.impact[answer];
 
       Object.entries(impacts).forEach(([need, weight]) => {
-        if (need === 'suction' && weight >= 2) {
-          if (product.suction >= 7000) { score += weight * 5; reasons.push('Strong suction for your needs'); }
+        if (weight < 0) {
+          // Negative = don't need this
+          if (need === 'gpu' && product.specs?.gpu?.toLowerCase().includes('integrated')) {
+            score += Math.abs(weight) * 3; reasons.push('No GPU needed — saves money');
+          }
+          if (need === 'mop' && (!product.mop || product.mop === false)) {
+            score += 3; reasons.push("Saves on features you won't use");
+          }
+          return;
+        }
+
+        // Robot vacuum features
+        if (need === 'suction' && product.suction) {
+          if (product.suction >= 7000) { score += weight * 5; reasons.push('Strong suction'); }
           else if (product.suction >= 5000) { score += weight * 2; }
         }
-        if (need === 'mop' && weight >= 1) {
-          if (product.mop && product.mop !== false) { score += weight * 5; reasons.push('Has mopping'); }
+        if (need === 'mop' && product.mop && product.mop !== false) {
+          score += weight * 5; reasons.push('Has mopping');
           if (product.mop === 'rotating-dual' || product.mop === 'sonic-vibrating') { score += weight * 3; reasons.push('Advanced mopping'); }
         }
-        if (need === 'mop' && weight < 0) {
-          if (!product.mop || product.mop === false) { score += 3; reasons.push("No mop needed — you save on a feature you won't use"); }
+        if (need === 'selfEmpty' && product.selfEmpty) { score += weight * 5; reasons.push('Self-emptying base'); }
+        if (need === 'obstacle' && product.obstacleAvoidance) { score += weight * 5; reasons.push('Obstacle avoidance'); }
+        if (need === 'nav' && product.nav?.includes?.('LiDAR')) { score += weight * 4; reasons.push('LiDAR navigation'); }
+        if (need === 'battery' && product.battery >= 180) { score += weight * 3; reasons.push('Long battery'); }
+        if (need === 'mopLift' && (blob.includes('mop lift') || blob.includes('auto-lift'))) { score += weight * 4; reasons.push('Auto mop lifting'); }
+        if (need === 'mopWash' && (blob.includes('hot water') || blob.includes('mop wash'))) { score += weight * 4; reasons.push('Self-cleaning mops'); }
+
+        // PC features
+        if (need === 'gpu' && product.specs?.gpu) {
+          const gpu = product.specs.gpu.toLowerCase();
+          if (gpu.includes('5090') || gpu.includes('5080')) { score += weight * 5; reasons.push('Top-tier GPU'); }
+          else if (gpu.includes('5070') || gpu.includes('9070')) { score += weight * 4; reasons.push('Great GPU'); }
+          else if (gpu.includes('4060') || gpu.includes('7600')) { score += weight * 2; reasons.push('Solid GPU'); }
         }
-        if (need === 'selfEmpty' && weight >= 1) {
-          if (product.selfEmpty) { score += weight * 5; reasons.push('Self-emptying base'); }
+        if (need === 'cpu' && product.specs?.cpu) {
+          const cpu = product.specs.cpu.toLowerCase();
+          if (cpu.includes('9900') || cpu.includes('9950') || cpu.includes('ultra 9')) { score += weight * 5; reasons.push('High-end CPU'); }
+          else if (cpu.includes('9700') || cpu.includes('ultra 7')) { score += weight * 3; reasons.push('Strong CPU'); }
+          else { score += weight * 1; }
         }
-        if (need === 'obstacle' && weight >= 1) {
-          if (product.obstacleAvoidance) { score += weight * 5; reasons.push('AI obstacle avoidance'); }
+        if (need === 'ram' && product.specs?.ram) {
+          const ram = product.specs.ram;
+          if (ram.includes('64GB')) { score += weight * 5; reasons.push('64GB RAM'); }
+          else if (ram.includes('32GB')) { score += weight * 3; reasons.push('32GB RAM'); }
+          else { score += weight * 1; }
         }
-        if (need === 'nav' && weight >= 1) {
-          if (product.nav.includes('LiDAR')) { score += weight * 4; reasons.push('LiDAR navigation'); }
-        }
-        if (need === 'battery' && weight >= 1) {
-          if (product.battery >= 180) { score += weight * 3; reasons.push('Long battery for large area'); }
-        }
-        if (need === 'mopLift' && weight >= 1) {
-          const desc = JSON.stringify(product.features).toLowerCase();
-          if (desc.includes('mop lift') || desc.includes('auto-lift')) { score += weight * 4; reasons.push('Auto mop lifting for mixed floors'); }
-        }
-        if (need === 'mopWash' && weight >= 1) {
-          const desc = JSON.stringify(product.features).toLowerCase();
-          if (desc.includes('hot water') || desc.includes('mop wash')) { score += weight * 4; reasons.push('Self-cleaning mop pads'); }
+        if (need === 'storage' && product.specs?.storage) {
+          if (blob.includes('4tb') || blob.includes('2tb')) { score += weight * 4; reasons.push('Plenty of storage'); }
+          else if (blob.includes('1tb')) { score += weight * 2; reasons.push('1TB SSD'); }
         }
       });
     });
 
-    // Deduplicate reasons
     reasons = [...new Set(reasons)];
-
-    return {
-      ...product,
-      score,
-      matchReasons: reasons.slice(0, 5),
-      matchPercent: Math.min(100, Math.round((score / 80) * 100))
-    };
+    return { ...product, score, matchReasons: reasons.slice(0, 6), matchPercent: Math.min(100, Math.round((score / 80) * 100)) };
   });
 
   scored.sort((a, b) => b.score - a.score);
-
-  // Find best match, upgrade, and budget options
   const bestMatch = scored[0];
-  const budgetIdx = ['budget', 'mid', 'premium', 'flagship'].indexOf(budget);
+  const upgrade = scored.find(p => tierOrder.indexOf(p.tier) > budgetIdx && p.id !== bestMatch.id);
+  const downgrade = scored.find(p => tierOrder.indexOf(p.tier) < budgetIdx && p.id !== bestMatch.id);
 
-  const upgrade = scored.find(p =>
-    ['budget', 'mid', 'premium', 'flagship'].indexOf(p.tier) > budgetIdx && p.id !== bestMatch.id
-  );
-
-  const downgrade = scored.find(p =>
-    ['budget', 'mid', 'premium', 'flagship'].indexOf(p.tier) < budgetIdx && p.id !== bestMatch.id
-  );
-
-  res.json({
-    topPick: bestMatch,
-    upgrade: upgrade || null,
-    savingOption: downgrade || null,
-    allRanked: scored,
-    answeredBudget: budget,
-    tier: cat.tiers[budget]
-  });
+  res.json({ topPick: bestMatch, upgrade: upgrade || null, savingOption: downgrade || null, allRanked: scored, answeredBudget: budget, tier: cat.tiers[budget] });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🛒 ShopBuddy running on port ${PORT}`);
-});
+app.listen(PORT, '0.0.0.0', () => console.log(`🛒 ShopBuddy running on port ${PORT}`));

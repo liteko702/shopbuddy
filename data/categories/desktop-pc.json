@@ -1,0 +1,420 @@
+{
+  "id": "desktop-pc",
+  "name": "Desktop PC",
+  "icon": "🖥️",
+  "emoji": "💻",
+  "tagline": "Pre-built vs custom build, specs guide, best deals",
+  "intro": "Buying a desktop PC in 2026 is exciting — the new AMD Ryzen 9000 series, Intel Core Ultra, and NVIDIA RTX 50-series / AMD RX 9000-series GPUs are all here. Whether you want a pre-built machine or to build your own, the key is matching specs to what you'll actually DO with it. A £500 PC handles office work and web browsing beautifully. A £1,500 PC games at 1440p beautifully. A £3,000+ PC is only needed for 4K gaming or serious professional work. Let's figure out what YOU need.",
+
+  "thingsToConsider": [
+    {
+      "title": "CPU (Processor)",
+      "importance": "critical",
+      "summary": "The brain of your PC. Determines how fast everything runs.",
+      "detail": "Two brands: AMD Ryzen and Intel Core. In 2026, AMD Ryzen 7 9700X and Intel Core Ultra 7 265 are the sweet spot for most people. For gaming, the CPU matters less than the GPU — a mid-range CPU won't bottleneck even high-end graphics cards in most games. For productivity (video editing, 3D rendering), more cores matter: look at Ryzen 9 or Core Ultra 9.",
+      "recommendation": "For gaming: Ryzen 5 9600X or Intel Core Ultra 5 245 (both ~£200-250). For productivity: Ryzen 7 9700X or Core Ultra 7 265 (~£300-350). Don't overspend on CPU if gaming is your priority — put the money into GPU instead."
+    },
+    {
+      "title": "GPU (Graphics Card)",
+      "importance": "critical",
+      "summary": "THE most important component for gaming and creative work.",
+      "detail": "NVIDIA GeForce RTX 50-series and AMD Radeon RX 9000-series are the current generation. For 1080p gaming: RTX 5060 or RX 9070 (~£300-400). For 1440p: RTX 5070 or RX 9070 XT (~£500-600). For 4K: RTX 5080 (~£950). For absolute max: RTX 5090 (~£2,000). VRAM (video memory) matters — 12GB minimum in 2026, 16GB ideal. AMD's RX 9070 XT offers 16GB at great value.",
+      "recommendation": "Best value right now: AMD RX 9070 XT (16GB, ~£550) or NVIDIA RTX 5070 (12GB, ~£550). If you're not gaming, integrated graphics on modern CPUs handle office/web/streaming fine — skip the GPU entirely and save £300+."
+    },
+    {
+      "title": "RAM (Memory)",
+      "importance": "important",
+      "summary": "How much your PC can do at once. More = more multitasking.",
+      "detail": "DDR5 is the current standard. 16GB is minimum for a modern PC. 32GB is the sweet spot for gaming + multitasking. 64GB only needed for video editing, large datasets, or running virtual machines. Speed matters less than capacity — DDR5-5600 or DDR5-6000 is plenty. RAM prices have risen in 2026 so budget accordingly.",
+      "recommendation": "32GB DDR5 for most people (~£80-120). 16GB if you're on a tight budget. 64GB only if you know you need it."
+    },
+    {
+      "title": "Storage (SSD)",
+      "importance": "important",
+      "summary": "Where your files, games, and programs live. SSD speed affects load times.",
+      "detail": "NVMe SSDs are standard — they're 5-10x faster than old SATA SSDs. 1TB is minimum in 2026 (games are 50-150GB each). Gen 4 NVMe is the sweet spot for value — Gen 5 is faster but costs more with minimal real-world difference for most users. You can always add a second drive later.",
+      "recommendation": "1TB NVMe Gen 4 SSD (~£60-80) as your main drive. Add a 2TB if you have lots of games. Skip Gen 5 unless you do heavy video editing."
+    },
+    {
+      "title": "Pre-Built vs Custom Build",
+      "importance": "critical",
+      "summary": "Buy ready-made or build yourself? Both are valid in 2026.",
+      "detail": "Pre-built: convenient, comes with warranty, tested and ready. Custom: you choose every part, often better value, satisfying to build, easier to upgrade. In 2026, the price gap is smaller than ever — some pre-builts are genuinely good value. Custom builds shine for upgradability and avoiding cheap hidden components (PSU, motherboard). Pre-built is fine if you want convenience.",
+      "recommendation": "If you've never built a PC and just want it working: pre-built from PCSpecialist, CyberPower, or AWD-IT (UK-based, good value). If you want to learn and get the best value: build your own — it's like adult LEGO and YouTube guides make it easy."
+    },
+    {
+      "title": "Power Supply (PSU)",
+      "importance": "often-overlooked",
+      "summary": "Powers everything. A cheap PSU can damage components or cause instability.",
+      "detail": "80+ Bronze efficiency minimum. 80+ Gold recommended. Wattage depends on GPU: RTX 5060 needs 550W, RTX 5070 needs 650W, RTX 5080 needs 850W. Always get 100-150W more than the minimum to allow headroom and future upgrades. In pre-builts, this is where manufacturers often cut corners — check what PSU is included.",
+      "recommendation": "650W 80+ Gold for mid-range builds (~£70). 850W for high-end. Brands to trust: Corsair, Seasonic, EVGA, be quiet!"
+    },
+    {
+      "title": "Monitor",
+      "importance": "important",
+      "summary": "No point having a powerful PC if your monitor can't show the difference.",
+      "detail": "1080p 144Hz: budget gaming, perfectly good for esports. 1440p 144-165Hz: the sweet spot in 2026 — sharp and smooth. 4K 144Hz: top-end, needs a powerful GPU. Panel types: IPS (best colours, wide viewing angles), VA (deep blacks, good contrast), OLED (best of everything but expensive). Response time: 1ms for competitive gaming, 4-5ms fine for everything else.",
+      "recommendation": "1440p 144Hz IPS monitor is the 2026 sweet spot (~£200-300). Pair with your GPU — don't buy a 4K monitor with a mid-range GPU."
+    },
+    {
+      "title": "Case",
+      "importance": "moderate",
+      "summary": "Houses everything. Affects airflow, noise, looks, and build ease.",
+      "detail": "ATX Mid-Tower is standard — fits most motherboards and GPUs. Look for good airflow (mesh front panel), cable management, and enough fan mounts. RGB is personal preference. Some popular cases: NZXT H5 Flow, Corsair 4000D Airflow, Fractal North, Lian Li Lancool 216.",
+      "recommendation": "Spend £60-100 on a case with a mesh front and good reviews. It'll last multiple builds."
+    },
+    {
+      "title": "Operating System",
+      "importance": "moderate",
+      "summary": "Windows 11 is standard for gaming. Linux is free but has game compatibility issues.",
+      "detail": "Windows 11 Home: ~£100-120 retail. Often included in pre-builts. Windows 11 Pro: adds BitLocker, Hyper-V, Remote Desktop — useful for work. You can install Windows 11 without activating it (free, with a watermark and limited customisation). Many OEM keys available for £15-30.",
+      "recommendation": "Windows 11 Home for most people. If you just browse and do office work, consider a Chromebox or Linux."
+    }
+  ],
+
+  "jargon": [
+    { "term": "CPU", "meaning": "Central Processing Unit — the brain. Handles all calculations. AMD Ryzen and Intel Core are the two brands." },
+    { "term": "GPU", "meaning": "Graphics Processing Unit — the graphics card. Renders images, essential for gaming and video editing. NVIDIA GeForce and AMD Radeon are the two brands." },
+    { "term": "RAM", "meaning": "Random Access Memory — temporary fast storage for running programs. More RAM = more multitasking. DDR5 is the current standard." },
+    { "term": "SSD / NVMe", "meaning": "Solid State Drive — where your files are stored permanently. NVMe is the fastest type, connecting directly to the motherboard. No moving parts = fast and silent." },
+    { "term": "VRAM", "meaning": "Video RAM — memory on the graphics card. More VRAM = higher resolution textures and better performance at 4K. 12-16GB is ideal in 2026." },
+    { "term": "PSU", "meaning": "Power Supply Unit — converts mains electricity to power your components. Rated in watts. 80+ Gold means efficient." },
+    { "term": "Motherboard", "meaning": "The main circuit board everything plugs into. Must be compatible with your CPU (AMD needs AM5 socket, Intel needs LGA 1851)." },
+    { "term": "ATX / mATX / ITX", "meaning": "Motherboard and case sizes. ATX is standard/full-size. mATX is smaller. ITX is compact. Must match — ATX board won't fit an ITX case." },
+    { "term": "1080p / 1440p / 4K", "meaning": "Screen resolution. 1080p = 1920×1080 (Full HD). 1440p = 2560×1440 (QHD). 4K = 3840×2160. Higher = sharper but needs more GPU power." },
+    { "term": "FPS (Frames Per Second)", "meaning": "How many images your GPU renders per second. 60 FPS is smooth. 144+ FPS is very smooth for competitive gaming." },
+    { "term": "Bottleneck", "meaning": "When one component limits another. E.g. a weak CPU holding back a powerful GPU. Balance your components to avoid this." },
+    { "term": "DLSS / FSR", "meaning": "AI upscaling technology. NVIDIA DLSS and AMD FSR render at lower resolution then upscale using AI — massive FPS boost with minimal quality loss." },
+    { "term": "Ray Tracing", "meaning": "Realistic lighting/reflections in games. Looks stunning but demanding. RTX 50-series handles it much better than older cards." },
+    { "term": "M.2 Slot", "meaning": "The slot on the motherboard where NVMe SSDs plug in. Most boards have 2-4 M.2 slots." },
+    { "term": "AIO (All-in-One)", "meaning": "A closed-loop liquid cooler for the CPU. Better cooling and quieter than air coolers, but more expensive. 240mm or 360mm radiator sizes." },
+    { "term": "Thermal Paste", "meaning": "A compound applied between CPU and cooler to improve heat transfer. Most coolers come with it pre-applied." },
+    { "term": "XMP / EXPO", "meaning": "Intel XMP and AMD EXPO are one-click settings in BIOS that run your RAM at its rated speed. Without enabling this, RAM often runs slower than advertised." }
+  ],
+
+  "questions": [
+    {
+      "id": "purpose",
+      "question": "What will you mainly use this PC for?",
+      "options": [
+        { "label": "Gaming", "icon": "🎮", "value": "gaming", "desc": "Playing games is the priority" },
+        { "label": "Office & Web", "icon": "📄", "value": "office", "desc": "Documents, email, browsing, streaming" },
+        { "label": "Creative Work", "icon": "🎨", "value": "creative", "desc": "Video editing, 3D, Photoshop, music" },
+        { "label": "Programming", "icon": "💻", "value": "dev", "desc": "Software development, VMs, Docker" },
+        { "label": "Bit of everything", "icon": "🔀", "value": "all", "desc": "Gaming + work + creative" }
+      ],
+      "impact": { "gaming": { "gpu": 3, "cpu": 1 }, "office": { "cpu": 0, "gpu": -2 }, "creative": { "cpu": 3, "ram": 2, "gpu": 2, "storage": 2 }, "dev": { "cpu": 2, "ram": 3, "storage": 1 }, "all": { "cpu": 2, "gpu": 2, "ram": 1 } }
+    },
+    {
+      "id": "gaming_res",
+      "question": "What resolution do you want to game at?",
+      "options": [
+        { "label": "1080p (Full HD)", "icon": "📺", "value": "1080p", "desc": "Most affordable, high FPS" },
+        { "label": "1440p (QHD)", "icon": "🖥️", "value": "1440p", "desc": "The sweet spot in 2026" },
+        { "label": "4K (Ultra HD)", "icon": "📽️", "value": "4k", "desc": "Maximum sharpness, needs power" },
+        { "label": "Not gaming", "icon": "🚫", "value": "none", "desc": "Skip this — I won't be gaming" }
+      ],
+      "impact": { "1080p": { "gpu": 0 }, "1440p": { "gpu": 1 }, "4k": { "gpu": 3 }, "none": { "gpu": -3 } }
+    },
+    {
+      "id": "build_pref",
+      "question": "Pre-built or build your own?",
+      "options": [
+        { "label": "Pre-built please", "icon": "📦", "value": "prebuilt", "desc": "Ready to go, warranty included" },
+        { "label": "I'll build it myself", "icon": "🔧", "value": "custom", "desc": "Pick every part, better value" },
+        { "label": "Not sure yet", "icon": "🤔", "value": "either", "desc": "Show me both options" }
+      ],
+      "impact": {}
+    },
+    {
+      "id": "multitask",
+      "question": "How much multitasking do you do?",
+      "options": [
+        { "label": "One thing at a time", "icon": "1️⃣", "value": "light", "desc": "Close apps when done" },
+        { "label": "Several apps open", "icon": "📂", "value": "moderate", "desc": "Browser + Spotify + game" },
+        { "label": "Heavy multitasking", "icon": "🔥", "value": "heavy", "desc": "VMs, streams, tabs galore" }
+      ],
+      "impact": { "light": {}, "moderate": { "ram": 1 }, "heavy": { "ram": 3, "cpu": 1 } }
+    },
+    {
+      "id": "storage_need",
+      "question": "How much storage do you need?",
+      "options": [
+        { "label": "Under 500GB", "icon": "📁", "value": "low", "desc": "Few programs, cloud storage" },
+        { "label": "1TB", "icon": "💾", "value": "medium", "desc": "A good library of games/files" },
+        { "label": "2TB+", "icon": "🗄️", "value": "high", "desc": "Lots of games, videos, projects" }
+      ],
+      "impact": { "low": {}, "medium": { "storage": 1 }, "high": { "storage": 3 } }
+    },
+    {
+      "id": "budget",
+      "question": "What's your budget for the PC itself? (no monitor/peripherals)",
+      "options": [
+        { "label": "Under £500", "icon": "💰", "value": "budget", "desc": "Office/web PC or very basic gaming" },
+        { "label": "£500-900", "icon": "💰💰", "value": "mid", "desc": "Solid 1080p gaming, good productivity" },
+        { "label": "£900-1,500", "icon": "💰💰💰", "value": "premium", "desc": "Great 1440p gaming, powerful creative" },
+        { "label": "£1,500+", "icon": "💎", "value": "flagship", "desc": "4K gaming, professional workstation" }
+      ]
+    }
+  ],
+
+  "products": [
+    {
+      "id": "office-build",
+      "name": "Office & Web Build",
+      "brand": "Custom Build",
+      "tier": "budget",
+      "price": 350,
+      "priceRange": "£300-400",
+      "rating": 4.3,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 5 5600G (integrated graphics)",
+        "gpu": "Integrated Radeon (no discrete GPU needed)",
+        "ram": "16GB DDR4-3200",
+        "storage": "500GB NVMe SSD",
+        "psu": "450W 80+ Bronze",
+        "case": "Compact mATX case"
+      },
+      "features": ["Handles Office, web, streaming perfectly", "Very quiet and low power", "No dedicated GPU needed — saves £200+", "Small form factor — fits anywhere", "Can play light games (Minecraft, older titles)", "Upgradeable — add a GPU later if needed"],
+      "missing": ["Can't play modern games well", "No 4K video editing", "DDR4 (not latest DDR5)", "Limited to light creative work"],
+      "bestFor": "Perfect if you just need a fast, reliable PC for work, web browsing, and streaming. Fanstically good value.",
+      "buyLinks": [
+        { "store": "PCPartPicker UK", "url": "https://uk.pcpartpicker.com/guide/TydTwP/entry-level-amd-gaming-build" },
+        { "store": "Scan.co.uk", "url": "https://www.scan.co.uk/shop/computer-hardware/all" }
+      ]
+    },
+    {
+      "id": "entry-gaming",
+      "name": "Entry Gaming Build",
+      "brand": "Custom Build / Pre-built",
+      "tier": "mid",
+      "price": 650,
+      "priceRange": "£550-750",
+      "rating": 4.4,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 5 9600X / Intel Core i5-14400F",
+        "gpu": "NVIDIA RTX 4060 8GB / AMD RX 7600 8GB",
+        "ram": "16GB DDR5-5600",
+        "storage": "1TB NVMe Gen 4 SSD",
+        "psu": "550W 80+ Bronze",
+        "case": "ATX Mid-Tower (mesh front)"
+      },
+      "features": ["Solid 1080p 60-144fps gaming", "Handles all modern games at medium-high settings", "Good for streaming, office, light creative work", "16GB RAM enough for gaming + browser", "DLSS/FSR for big FPS boosts", "Quiet under normal use"],
+      "missing": ["8GB VRAM may limit future games", "1440p gaming is possible but not maxed", "Previous gen GPU (still excellent value)", "May need RAM upgrade for heavy creative work"],
+      "bestFor": "Great first gaming PC or solid all-rounder. Plays everything at 1080p and handles 1440p in many games.",
+      "buyLinks": [
+        { "store": "PCPartPicker UK", "url": "https://uk.pcpartpicker.com/guide/LQMnTW/modest-amd-gaming-build" },
+        { "store": "AWD-IT", "url": "https://www.awd-it.co.uk/gaming-pcs" },
+        { "store": "CyberPower UK", "url": "https://www.cyberpowersystem.co.uk" }
+      ]
+    },
+    {
+      "id": "sweet-spot-gaming",
+      "name": "1440p Sweet Spot Build",
+      "brand": "Custom Build / Pre-built",
+      "tier": "mid",
+      "price": 900,
+      "priceRange": "£800-1,000",
+      "rating": 4.7,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 7 9700X / Intel Core Ultra 7 265",
+        "gpu": "AMD RX 9070 XT 16GB / NVIDIA RTX 5070 12GB",
+        "ram": "32GB DDR5-6000",
+        "storage": "1TB NVMe Gen 4 SSD",
+        "psu": "750W 80+ Gold",
+        "case": "ATX Mid-Tower (good airflow)"
+      },
+      "features": ["Excellent 1440p gaming at high-ultra settings", "16GB VRAM on AMD card (future-proof)", "32GB RAM handles everything", "Great for video editing and creative work", "Modern platform with upgrade path", "Good for streaming while gaming"],
+      "missing": ["4K gaming possible but not maxed", "RTX 5070 only has 12GB VRAM", "CPU cooler needed (~£30-50 extra)", "No Wi-Fi unless motherboard has it"],
+      "bestFor": "THE recommended build for 2026. Best value for 1440p gaming. Handles creative work brilliantly. The GPU choice here is the best bang-for-buck available.",
+      "buyLinks": [
+        { "store": "PCPartPicker UK", "url": "https://uk.pcpartpicker.com/guide/jFwrxr/great-amd-gaming-build" },
+        { "store": "PCSpecialist", "url": "https://www.pcspecialist.co.uk" },
+        { "store": "Scan 3XS", "url": "https://www.scan.co.uk/3xs" }
+      ]
+    },
+    {
+      "id": "high-end-gaming",
+      "name": "High-End 1440p/4K Build",
+      "brand": "Custom Build",
+      "tier": "premium",
+      "price": 1400,
+      "priceRange": "£1,200-1,600",
+      "rating": 4.7,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 9 9900X / Intel Core Ultra 9 285K",
+        "gpu": "NVIDIA RTX 5080 16GB",
+        "ram": "32GB DDR5-6000",
+        "storage": "2TB NVMe Gen 4 SSD",
+        "psu": "850W 80+ Gold",
+        "case": "Premium ATX (Fractal / Lian Li)"
+      },
+      "features": ["4K gaming at high settings", "1440p at ultra settings with ray tracing", "16GB VRAM — no texture issues", "Excellent for professional video editing and 3D", "Top-tier CPU for any workload", "Premium build quality and cooling"],
+      "missing": ["Expensive — diminishing returns vs sweet spot", "Needs a 4K or high-refresh 1440p monitor to benefit", "High power consumption", "Overkill for office/web use"],
+      "bestFor": "For enthusiasts who want near-maximum performance. Great for 4K gaming and professional creative work.",
+      "buyLinks": [
+        { "store": "PCPartPicker UK", "url": "https://uk.pcpartpicker.com/guide/TXfrxr/enthusiast-amd-gamingstreaming-build" },
+        { "store": "Overclockers UK", "url": "https://www.overclockers.co.uk" },
+        { "store": "Scan 3XS", "url": "https://www.scan.co.uk/3xs" }
+      ]
+    },
+    {
+      "id": "ultimate-build",
+      "name": "Ultimate 4K Build",
+      "brand": "Custom Build",
+      "tier": "flagship",
+      "price": 2800,
+      "priceRange": "£2,500-3,500",
+      "rating": 4.8,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 9 9950X / Intel Core Ultra 9 285K",
+        "gpu": "NVIDIA RTX 5090 32GB",
+        "ram": "64GB DDR5-6000",
+        "storage": "2TB NVMe Gen 5 SSD + 4TB Gen 4",
+        "psu": "1000W 80+ Platinum",
+        "case": "Premium full tower"
+      },
+      "features": ["4K gaming at ultra settings with ray tracing", "32GB VRAM — absolutely future proof", "64GB RAM for anything you throw at it", "Professional-grade for 8K video editing", "Gen 5 SSD for fastest possible transfers", "Custom liquid cooling ready"],
+      "missing": ["Extremely expensive — seriously diminishing returns", "RTX 5090 costs ~£2,000 alone", "Huge power consumption (needs beefy PSU)", "Only worth it for 4K ultra enthusiasts or professionals"],
+      "bestFor": "Money-no-object build. Maximum performance in every scenario. Only buy this if you genuinely need it or just want the best.",
+      "buyLinks": [
+        { "store": "PCPartPicker UK", "url": "https://uk.pcpartpicker.com/guide/rWQzK8/glorious-amd-gamingstreaming-build" },
+        { "store": "Overclockers UK", "url": "https://www.overclockers.co.uk" }
+      ]
+    },
+    {
+      "id": "prebuilt-budget",
+      "name": "CyberPower Ultra 5 Gaming PC",
+      "brand": "CyberPowerPC (Pre-built)",
+      "tier": "mid",
+      "price": 750,
+      "priceRange": "£700-850",
+      "rating": 4.3,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 5 9600X",
+        "gpu": "NVIDIA RTX 4060 Ti 8GB",
+        "ram": "16GB DDR5",
+        "storage": "1TB NVMe SSD",
+        "psu": "650W 80+",
+        "case": "CyberPower mid-tower"
+      },
+      "features": ["Ready to go out of the box", "Good 1080p/1440p gaming performance", "2-year warranty included", "UK-based support", "Clean cable management", "Upgradeable standard ATX layout"],
+      "missing": ["GPU is previous gen (still good)", "PSU brand may be generic", "16GB RAM (upgrade to 32GB recommended)", "Some proprietary components possible"],
+      "bestFor": "Great value pre-built for people who don't want to build. Good specs, UK warranty, ready to play.",
+      "buyLinks": [
+        { "store": "CyberPower UK", "url": "https://www.cyberpowersystem.co.uk" },
+        { "store": "Amazon", "url": "https://www.amazon.co.uk/s?k=CyberPowerPC+gaming" }
+      ]
+    },
+    {
+      "id": "prebuilt-mid",
+      "name": "PCSpecialist Vortex GR",
+      "brand": "PCSpecialist (Pre-built)",
+      "tier": "premium",
+      "price": 1200,
+      "priceRange": "£1,100-1,400",
+      "rating": 4.6,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 7 9700X",
+        "gpu": "NVIDIA RTX 5070 12GB",
+        "ram": "32GB DDR5-5600",
+        "storage": "1TB NVMe Gen 4",
+        "psu": "750W 80+ Gold Corsair",
+        "case": "PCSpecialist mid-tower"
+      },
+      "features": ["Fully customisable on their website", "You pick every component", "Named brand parts (Corsair PSU, Samsung SSD)", "Built and tested by engineers", "3-year warranty with collect & return", "Excellent customer service (UK-based)"],
+      "missing": ["Costs £100-200 more than building yourself", "2-3 week build time", "Some options push the price up quickly", "Limited case choices"],
+      "bestFor": "Best of both worlds — you choose the specs like a custom build, but they build and test it. Highly recommended for people who want quality without DIY.",
+      "buyLinks": [
+        { "store": "PCSpecialist", "url": "https://www.pcspecialist.co.uk/gaming-pcs/" }
+      ]
+    },
+    {
+      "id": "creative-workstation",
+      "name": "Creative Workstation Build",
+      "brand": "Custom Build",
+      "tier": "premium",
+      "price": 1300,
+      "priceRange": "£1,100-1,500",
+      "rating": 4.6,
+      "nav": "—",
+      "suction": 0,
+      "mop": false,
+      "selfEmpty": false,
+      "obstacleAvoidance": false,
+      "battery": 0,
+      "noise": 0,
+      "specs": {
+        "cpu": "AMD Ryzen 9 9900X (12-core)",
+        "gpu": "NVIDIA RTX 5070 12GB (CUDA for creative apps)",
+        "ram": "64GB DDR5-5600",
+        "storage": "2TB NVMe Gen 4 SSD",
+        "psu": "750W 80+ Gold",
+        "case": "Quiet-focused case (be quiet!)"
+      },
+      "features": ["12-core CPU tears through rendering", "64GB RAM for Premiere, After Effects, Blender", "NVIDIA CUDA acceleration for creative apps", "2TB fast storage for project files", "Quiet case for studio environments", "Can also game at 1440p when not working"],
+      "missing": ["Not the absolute fastest for gaming (GPU is mid-range)", "Expensive RAM cost in 2026", "Needs good cooling for sustained workloads", "May need additional storage for video archives"],
+      "bestFor": "Video editors, 3D artists, music producers. Prioritises CPU cores and RAM over gaming GPU power.",
+      "buyLinks": [
+        { "store": "PCPartPicker UK", "url": "https://uk.pcpartpicker.com" },
+        { "store": "Scan.co.uk", "url": "https://www.scan.co.uk" }
+      ]
+    }
+  ],
+
+  "tiers": {
+    "budget": { "label": "Office / Basic", "range": "Under £500", "icon": "💰", "description": "Web browsing, Office, streaming. No gaming GPU needed." },
+    "mid": { "label": "1080p Gaming / All-rounder", "range": "£500-900", "icon": "⭐", "description": "Solid gaming at 1080p, good for everything else. Best value." },
+    "premium": { "label": "1440p Gaming / Creative", "range": "£900-1,500", "icon": "💎", "description": "Excellent 1440p gaming, great for video editing and creative work." },
+    "flagship": { "label": "4K / Enthusiast", "range": "£1,500+", "icon": "👑", "description": "Maximum performance. 4K gaming, professional workstation." }
+  }
+}

@@ -22,7 +22,7 @@
     "icon": "💻",
     "items": [
       { "id": "laptop", "name": "Laptop", "icon": "💻", "tagline": "Specs decoded, work vs gaming vs creative", "keywords": ["computer", "macbook", "chromebook", "notebook"] },
-      { "id": "desktop-pc", "name": "Desktop PC", "icon": "🖥️", "tagline": "Pre-built vs custom build, specs guide", "keywords": ["computer", "gaming pc", "workstation", "build"] },
+      { "id": "desktop-pc", "name": "Desktop PC", "icon": "🖥️", "tagline": "Pre-built vs custom build, specs guide", "keywords": ["computer", "gaming pc", "workstation", "build", "pc"] },
       { "id": "build-pc", "name": "Build Your Own PC", "icon": "🔧", "tagline": "CPU, GPU, RAM, storage — parts picker", "keywords": ["custom", "gaming", "components", "motherboard"] },
       { "id": "tablet", "name": "Tablet", "icon": "📱", "tagline": "iPad vs Android vs Windows, size & stylus", "keywords": ["ipad", "samsung tab", "drawing"] },
       { "id": "phone", "name": "Smartphone", "icon": "📲", "tagline": "iPhone vs Android, camera, battery life", "keywords": ["mobile", "iphone", "samsung", "pixel"] },

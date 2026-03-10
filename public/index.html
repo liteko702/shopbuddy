@@ -518,17 +518,28 @@ function renderResults(data) {
   const { topPick, upgrade, savingOption, allRanked, tier } = data;
 
   const renderProduct = (p, badge, badgeClass) => {
-    const mopLabel = { false: 'No mop', 'basic-pad': 'Basic pad', 'vibrating': 'Vibrating', 'rotating-dual': 'Dual rotating', 'sonic-vibrating': 'Sonic vibrating' };
+    // Render specs dynamically — works for any category
+    let specsHtml = '';
+    if (p.specs) {
+      // PC-style specs object
+      specsHtml = `<div class="spec-grid">${Object.entries(p.specs).map(([k, v]) => `
+        <div class="spec"><div class="val" style="font-size:0.82em">${v}</div><div class="lbl">${k.toUpperCase()}</div></div>
+      `).join('')}</div>`;
+    } else {
+      // Robot vacuum style
+      const mopLabel = { false: 'No mop', 'basic-pad': 'Basic pad', 'vibrating': 'Vibrating', 'rotating-dual': 'Dual rotating', 'sonic-vibrating': 'Sonic vibrating' };
+      specsHtml = `<div class="spec-grid">
+        <div class="spec"><div class="val">${(p.suction||0).toLocaleString()} Pa</div><div class="lbl">Suction</div></div>
+        <div class="spec"><div class="val">${p.nav||'—'}</div><div class="lbl">Navigation</div></div>
+        <div class="spec"><div class="val">${mopLabel[p.mop] || p.mop || '—'}</div><div class="lbl">Mopping</div></div>
+        <div class="spec"><div class="val">${p.selfEmpty ? '✅ Yes' : '❌ No'}</div><div class="lbl">Self-empty</div></div>
+      </div>`;
+    }
     return `
       <h4>${p.name}</h4>
       <div style="color:var(--text2);font-size:0.9em">${p.brand} · ${p.priceRange}</div>
       <div class="match-col" style="margin:8px 0">${p.matchPercent}% match</div>
-      <div class="spec-grid">
-        <div class="spec"><div class="val">${p.suction.toLocaleString()} Pa</div><div class="lbl">Suction</div></div>
-        <div class="spec"><div class="val">${p.nav}</div><div class="lbl">Navigation</div></div>
-        <div class="spec"><div class="val">${mopLabel[p.mop] || p.mop}</div><div class="lbl">Mopping</div></div>
-        <div class="spec"><div class="val">${p.selfEmpty ? '✅ Yes' : '❌ No'}</div><div class="lbl">Self-empty</div></div>
-      </div>
+      ${specsHtml}
       <p style="color:var(--text2);margin:12px 0;font-style:italic">${p.bestFor}</p>
       <div class="match-reasons">${p.matchReasons.map(r => `<span class="match-tag">${r}</span>`).join('')}</div>
       <div style="margin-top:12px">
