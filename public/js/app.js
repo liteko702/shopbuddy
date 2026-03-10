@@ -13,19 +13,109 @@ if (localStorage.getItem('shopbuddy-theme') === 'light') {
 }
 
 let catalogue = [];
+let trendingData = null;
 let currentCat = null;
 let answers = {};
 let currentQ = 0;
 let searchTimeout = null;
 
+// All catalogue items flat for lookups
+let allItems = [];
+
 document.addEventListener('DOMContentLoaded', async () => {
-  catalogue = await fetch('/api/categories').then(r => r.json());
+  [catalogue, trendingData] = await Promise.all([
+    fetch('/api/categories').then(r => r.json()),
+    fetch('/api/trending').then(r => r.json())
+  ]);
+  allItems = catalogue.flatMap(g => g.items);
+  renderTrending();
+  renderQuickPicks();
   renderCategories();
-  // Close search on outside click
   document.addEventListener('click', e => {
     if (!e.target.closest('.search-area')) document.getElementById('searchResults').classList.remove('open');
   });
 });
+
+function renderTrending() {
+  if (!trendingData) return;
+  const el = document.getElementById('trendingSection');
+  el.innerHTML = trendingData.trending.map(section => `
+    <div class="trending-section">
+      <div class="trending-header">
+        <h3>${section.title}</h3>
+        <div class="sub">${section.subtitle}</div>
+      </div>
+      <div class="trending-scroll">
+        ${section.items.map(item => `
+          <div class="trending-item ${item.live ? '' : 'disabled'}" ${item.live && item.id ? `onclick="loadCategory('${item.id}')"` : ''}>
+            <div class="t-icon">${item.icon}</div>
+            <div class="t-name">${item.name}</div>
+            <div class="t-note">${item.note}</div>
+            ${item.live ? '<span class="t-live">✓ Ready</span>' : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderQuickPicks() {
+  if (!trendingData) return;
+  const el = document.getElementById('quickPicks');
+  el.innerHTML = `
+    <div class="quick-picks">
+      <h3>💡 Shopping inspiration — what are you looking for?</h3>
+      <div class="picks-grid">
+        ${trendingData.quickPicks.map(pick => {
+          const cats = pick.categories.map(id => allItems.find(i => i.id === id)).filter(Boolean);
+          return `
+            <div class="pick-card" onclick="filterByPick([${pick.categories.map(c => `'${c}'`).join(',')}])">
+              <div class="pick-label">${pick.label}</div>
+              <div class="pick-desc">${pick.desc}</div>
+              <div class="pick-icons">
+                ${cats.slice(0, 5).map(c => `<span class="pick-cat">${c.icon} ${c.name}</span>`).join('')}
+                ${cats.length > 5 ? `<span class="pick-cat">+${cats.length - 5} more</span>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function filterByPick(categoryIds) {
+  // Scroll to categories and highlight matching ones
+  const groupsEl = document.getElementById('categoryGroups');
+  // Render only matching categories
+  const matched = allItems.filter(i => categoryIds.includes(i.id));
+  groupsEl.innerHTML = `
+    <div class="cat-group">
+      <div class="cat-group-header">
+        <span class="g-icon">🎯</span>
+        <h3>Matching categories</h3>
+        <button class="btn-back" onclick="renderCategories()" style="margin-left:auto;font-size:0.8em">Show all ↩</button>
+      </div>
+      <div class="cat-grid">
+        ${matched.map(item => item.live ? `
+          <div class="cat-card" onclick="loadCategory('${item.id}')">
+            <div class="icon">${item.icon}</div>
+            <div class="name">${item.name}</div>
+            <div class="tagline">${item.tagline}</div>
+          </div>
+        ` : `
+          <div class="cat-card cat-card-coming">
+            <div class="icon">${item.icon}</div>
+            <div class="name">${item.name}</div>
+            <div class="tagline">${item.tagline}</div>
+            <span class="coming-badge">Coming Soon</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  groupsEl.scrollIntoView({ behavior: 'smooth' });
+}
 
 function renderCategories() {
   const el = document.getElementById('categoryGroups');

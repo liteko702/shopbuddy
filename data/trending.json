@@ -1,0 +1,53 @@
+{
+  "lastUpdated": "2026-03-10",
+  "trending": [
+    {
+      "title": "🔥 Amazon Spring Deals Days",
+      "subtitle": "10-16 March 2026 — big discounts on tech, home and more",
+      "type": "event",
+      "items": [
+        { "name": "Robot Vacuums", "icon": "🤖", "id": "robot-vacuum", "note": "Up to 40% off Roborock & Ecovacs", "live": true },
+        { "name": "Gaming PCs & GPUs", "icon": "🖥️", "id": "desktop-pc", "note": "RTX 5070 deals landing this week", "live": true },
+        { "name": "Air Fryers", "icon": "🍟", "id": "air-fryer", "note": "Ninja and Cosori heavily discounted", "live": false },
+        { "name": "Coffee Machines", "icon": "☕", "id": "coffee-machine", "note": "Bean-to-cup deals from £199", "live": false },
+        { "name": "Headphones", "icon": "🎧", "id": "headphones", "note": "AirPods Pro 3 & Sony XM6 on sale", "live": false }
+      ]
+    },
+    {
+      "title": "📈 What Everyone's Buying Right Now",
+      "subtitle": "The most searched and purchased products in the UK this month",
+      "type": "popular",
+      "items": [
+        { "name": "Robot Vacuum", "icon": "🤖", "id": "robot-vacuum", "note": "Spring cleaning season = robot vacuum season", "live": true },
+        { "name": "E-Bike", "icon": "🚲", "id": "ebike", "note": "Commuter e-bikes surging as fuel costs stay high", "live": false },
+        { "name": "Air Fryer", "icon": "🍟", "id": "air-fryer", "note": "Still the UK's favourite kitchen gadget", "live": false },
+        { "name": "Standing Desk", "icon": "🪑", "id": "desk", "note": "WFH upgrades continue in 2026", "live": false },
+        { "name": "Padel Racket", "icon": "🏸", "id": null, "note": "700% search growth — UK's fastest-growing sport", "live": false },
+        { "name": "Electric Toothbrush", "icon": "🪥", "id": "electric-toothbrush", "note": "Oral-B iO vs Sonicare — big upgrades this year", "live": false }
+      ]
+    },
+    {
+      "title": "✨ New & Exciting in 2026",
+      "subtitle": "Products that just launched or are generating huge buzz",
+      "type": "new",
+      "items": [
+        { "name": "NVIDIA RTX 5070", "icon": "🎮", "id": "desktop-pc", "note": "Just launched — best value GPU in years", "live": true },
+        { "name": "iPhone 17", "icon": "📱", "id": "phone", "note": "Thinnest iPhone ever with new camera system", "live": false },
+        { "name": "Dyson WashG2", "icon": "🧹", "id": "vacuum-cleaner", "note": "Wet floor cleaner — no vacuum, just wash", "live": false },
+        { "name": "Samsung Galaxy S26 Ultra", "icon": "📲", "id": "phone", "note": "AI-powered everything, 200MP camera", "live": false },
+        { "name": "AirPods Pro 3", "icon": "🎧", "id": "headphones", "note": "Hearing health features, better ANC", "live": false },
+        { "name": "Dreame X50 Ultra", "icon": "🤖", "id": "robot-vacuum", "note": "Robot vacuum that climbs stairs (yes, really)", "live": true }
+      ]
+    }
+  ],
+  "quickPicks": [
+    { "label": "🏠 Setting up a new home?", "desc": "Essentials for moving in", "categories": ["washing-machine", "fridge-freezer", "oven", "vacuum-cleaner", "mattress", "sofa"] },
+    { "label": "💻 Work from home setup", "desc": "Upgrade your home office", "categories": ["desktop-pc", "laptop", "desk", "office-chair", "headphones", "router"] },
+    { "label": "🎮 Gaming setup", "desc": "Build the ultimate gaming corner", "categories": ["desktop-pc", "tv", "headphones", "gaming-console", "desk", "office-chair"] },
+    { "label": "👶 New baby arriving?", "desc": "Everything you need", "categories": ["pushchair", "car-seat", "toys"] },
+    { "label": "🌿 Garden ready for spring?", "desc": "Get your outdoor space sorted", "categories": ["lawnmower", "pressure-washer", "bbq", "garden-furniture", "hot-tub"] },
+    { "label": "🏋️ Fitness goals", "desc": "Home gym and gear", "categories": ["gym-equipment", "treadmill", "running-shoes", "smartwatch", "bicycle"] },
+    { "label": "☕ Kitchen upgrade", "desc": "Cook and brew like a pro", "categories": ["coffee-machine", "air-fryer", "oven", "dishwasher", "kettle", "microwave"] },
+    { "label": "🧴 Self-care routine", "desc": "Look and feel great", "categories": ["skincare", "electric-toothbrush", "hair-dryer", "shaver", "supplements"] }
+  ]
+}

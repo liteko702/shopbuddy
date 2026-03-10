@@ -18,6 +18,7 @@ fs.readdirSync(categoriesDir).forEach(file => {
 });
 
 const catalogue = require('./data/catalogue.json');
+const trending = require('./data/trending.json');
 
 // API: List all categories
 app.get('/api/categories', (req, res) => {
@@ -26,6 +27,9 @@ app.get('/api/categories', (req, res) => {
     items: group.items.map(item => ({ ...item, live: !!categories[item.id] }))
   })));
 });
+
+// API: Trending & inspiration
+app.get('/api/trending', (req, res) => res.json(trending));
 
 // API: Search
 app.get('/api/search', (req, res) => {
