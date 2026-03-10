@@ -45,15 +45,49 @@
     .card h2 { color: var(--accent2); margin-bottom: 12px; }
     .card h3 { color: var(--accent2); margin-bottom: 10px; }
 
+    /* Search */
+    .search-area { position: relative; margin: 24px 0; }
+    .search-input { width: 100%; padding: 16px 20px 16px 50px; background: var(--surface); border: 2px solid var(--border); border-radius: 14px; color: var(--text); font-size: 1.1em; transition: border 0.3s; }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+    .search-input::placeholder { color: var(--text2); }
+    .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-size: 1.2em; }
+    .search-results { position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-top: 4px; max-height: 400px; overflow-y: auto; z-index: 100; box-shadow: var(--shadow); display: none; }
+    .search-results.open { display: block; }
+    .search-item { padding: 14px 20px; cursor: pointer; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .search-item:hover { background: var(--surface2); }
+    .search-item:last-child { border-bottom: none; }
+    .search-item .s-icon { font-size: 1.5em; }
+    .search-item .s-name { font-weight: 600; }
+    .search-item .s-tag { font-size: 0.85em; color: var(--text2); }
+    .search-item .s-group { font-size: 0.75em; color: var(--accent2); }
+    .search-item .s-badge { font-size: 0.7em; padding: 2px 8px; border-radius: 8px; }
+    .s-badge-live { background: rgba(0,212,170,0.15); color: var(--green); }
+    .s-badge-soon { background: var(--border); color: var(--text2); }
+
+    /* Photo upload */
+    .photo-area { display: flex; gap: 12px; align-items: center; justify-content: center; margin: 16px 0; }
+    .photo-btn { padding: 12px 24px; background: var(--surface); border: 2px dashed var(--border); border-radius: 12px; color: var(--text2); cursor: pointer; font-size: 0.95em; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
+    .photo-btn:hover { border-color: var(--accent); color: var(--accent2); }
+    .photo-btn input { display: none; }
+    .photo-preview { max-width: 120px; max-height: 80px; border-radius: 8px; border: 1px solid var(--border); }
+    .photo-result { background: var(--surface); border: 1px solid var(--accent); border-radius: 12px; padding: 16px; margin: 12px 0; text-align: center; }
+
+    /* Category Groups */
+    .cat-group { margin-bottom: 32px; }
+    .cat-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .cat-group-header h3 { color: var(--text); font-size: 1.15em; }
+    .cat-group-header .g-icon { font-size: 1.4em; }
+
     /* Category Grid */
-    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
-    .cat-card { background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 28px; text-align: center; cursor: pointer; transition: all 0.3s; }
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .cat-card { background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s; }
     .cat-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(108,92,231,0.2); }
-    .cat-card .icon { font-size: 3em; margin-bottom: 12px; }
-    .cat-card .name { font-size: 1.3em; font-weight: 700; margin-bottom: 6px; }
-    .cat-card .tagline { color: var(--text2); font-size: 0.9em; }
-    .cat-card-coming { opacity: 0.4; pointer-events: none; }
-    .coming-badge { background: var(--border); color: var(--text2); padding: 4px 12px; border-radius: 12px; font-size: 0.8em; margin-top: 8px; display: inline-block; }
+    .cat-card .icon { font-size: 2.2em; margin-bottom: 8px; }
+    .cat-card .name { font-size: 1em; font-weight: 700; margin-bottom: 4px; }
+    .cat-card .tagline { color: var(--text2); font-size: 0.78em; }
+    .cat-card-coming { opacity: 0.45; }
+    .cat-card-coming:hover { opacity: 0.7; transform: none; border-color: var(--border); cursor: default; }
+    .coming-badge { background: var(--border); color: var(--text2); padding: 3px 10px; border-radius: 10px; font-size: 0.72em; margin-top: 6px; display: inline-block; }
 
     /* Buddy flow */
     .phase { display: none; animation: fadeIn 0.4s; }
@@ -160,9 +194,25 @@
   <div id="home" class="view active">
     <div class="card" style="text-align:center">
       <h2>What are you shopping for?</h2>
-      <p style="color:var(--text2)">Each buddy is a specialist that'll teach you what matters, ask the right questions, and find the best deals.</p>
+      <p style="color:var(--text2)">Search, browse, or snap a photo — each buddy teaches you what matters, asks the right questions, and finds deals.</p>
+
+      <div class="search-area">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for anything... robot vacuum, sofa, coffee, camera..." oninput="doSearch()" onfocus="doSearch()">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <div class="photo-area">
+        <label class="photo-btn">
+          📸 Snap or upload a photo
+          <input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this)">
+        </label>
+        <span style="color:var(--text2);font-size:0.85em">We'll identify the product and find your buddy</span>
+      </div>
+      <div id="photoResult"></div>
     </div>
-    <div class="cat-grid" id="categoryGrid"></div>
+
+    <div id="categoryGroups"></div>
   </div>
 
   <!-- BUDDY VIEW -->
@@ -194,46 +244,98 @@ if (localStorage.getItem('shopbuddy-theme') === 'light') {
   });
 }
 
-let categories = [];
+let catalogue = [];
 let currentCat = null;
 let answers = {};
 let currentQ = 0;
-
-// Coming soon categories
-const comingSoon = [
-  { id: 'washing-machine', name: 'Washing Machine', icon: '🫧', tagline: 'Spin speed, load size, energy ratings decoded' },
-  { id: 'camera', name: 'Camera', icon: '📷', tagline: 'DSLR, mirrorless, or phone? Find your match' },
-  { id: 'laptop', name: 'Laptop / Computer', icon: '💻', tagline: 'Specs explained, custom builds, best deals' },
-  { id: 'car', name: 'Car', icon: '🚗', tagline: 'New vs used, petrol vs electric, financing' },
-  { id: 'skincare', name: 'Skincare / Cream', icon: '🧴', tagline: 'Ingredients decoded, skin type matching' },
-  { id: 'tv', name: 'Television', icon: '📺', tagline: 'OLED vs QLED, size guide, sound quality' },
-];
+let searchTimeout = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
-  categories = await fetch('/api/categories').then(r => r.json());
+  catalogue = await fetch('/api/categories').then(r => r.json());
   renderCategories();
+  // Close search on outside click
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.search-area')) document.getElementById('searchResults').classList.remove('open');
+  });
 });
 
 function renderCategories() {
-  const grid = document.getElementById('categoryGrid');
-  let html = categories.map(c => `
-    <div class="cat-card" onclick="loadCategory('${c.id}')">
-      <div class="icon">${c.icon}</div>
-      <div class="name">${c.name}</div>
-      <div class="tagline">${c.tagline}</div>
+  const el = document.getElementById('categoryGroups');
+  el.innerHTML = catalogue.map(group => `
+    <div class="cat-group">
+      <div class="cat-group-header">
+        <span class="g-icon">${group.icon}</span>
+        <h3>${group.name}</h3>
+        <span style="color:var(--text2);font-size:0.85em">(${group.items.length})</span>
+      </div>
+      <div class="cat-grid">
+        ${group.items.map(item => item.live ? `
+          <div class="cat-card" onclick="loadCategory('${item.id}')">
+            <div class="icon">${item.icon}</div>
+            <div class="name">${item.name}</div>
+            <div class="tagline">${item.tagline}</div>
+          </div>
+        ` : `
+          <div class="cat-card cat-card-coming">
+            <div class="icon">${item.icon}</div>
+            <div class="name">${item.name}</div>
+            <div class="tagline">${item.tagline}</div>
+            <span class="coming-badge">Coming Soon</span>
+          </div>
+        `).join('')}
+      </div>
     </div>
   `).join('');
+}
 
-  html += comingSoon.map(c => `
-    <div class="cat-card cat-card-coming">
-      <div class="icon">${c.icon}</div>
-      <div class="name">${c.name}</div>
-      <div class="tagline">${c.tagline}</div>
-      <span class="coming-badge">Coming Soon</span>
-    </div>
-  `).join('');
+// Search
+async function doSearch() {
+  const q = document.getElementById('searchInput').value.trim();
+  const el = document.getElementById('searchResults');
+  if (!q) { el.classList.remove('open'); return; }
 
-  grid.innerHTML = html;
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(async () => {
+    const results = await fetch(`/api/search?q=${encodeURIComponent(q)}`).then(r => r.json());
+    if (!results.length) {
+      el.innerHTML = `<div class="search-item"><div><div class="s-name">No matches found</div><div class="s-tag">Try different keywords or browse categories below</div></div></div>`;
+    } else {
+      el.innerHTML = results.map(r => `
+        <div class="search-item" onclick="${r.live ? `loadCategory('${r.id}')` : ''}">
+          <span class="s-icon">${r.icon}</span>
+          <div>
+            <div class="s-name">${r.name} <span class="s-badge ${r.live ? 's-badge-live' : 's-badge-soon'}">${r.live ? '✓ Ready' : 'Coming Soon'}</span></div>
+            <div class="s-tag">${r.tagline}</div>
+            <div class="s-group">${r.group}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+    el.classList.add('open');
+  }, 200);
+}
+
+// Photo upload
+async function handlePhoto(input) {
+  const file = input.files[0];
+  if (!file) return;
+
+  const el = document.getElementById('photoResult');
+  el.innerHTML = `<div class="photo-result">
+    <p>🔍 Analysing your photo...</p>
+  </div>`;
+
+  // Show preview
+  const reader = new FileReader();
+  reader.onload = () => {
+    el.innerHTML = `<div class="photo-result">
+      <img src="${reader.result}" class="photo-preview" style="display:block;margin:0 auto 12px">
+      <p style="color:var(--accent2);font-weight:600">📸 Photo received!</p>
+      <p style="color:var(--text2);margin-top:8px">Photo identification is being built — for now, try searching for what you see in the photo using the search bar above!</p>
+      <p style="color:var(--text2);margin-top:8px;font-size:0.85em">Coming soon: AI-powered product identification from photos 🤖</p>
+    </div>`;
+  };
+  reader.readAsDataURL(file);
 }
 
 function goHome() {

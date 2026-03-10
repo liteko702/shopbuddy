@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Home & Appliances",
+    "icon": "🏠",
+    "items": [
+      { "id": "robot-vacuum", "name": "Robot Vacuum", "icon": "🤖", "tagline": "LiDAR, suction, mopping — find your match", "keywords": ["cleaning", "hoover", "roomba", "roborock"] },
+      { "id": "washing-machine", "name": "Washing Machine", "icon": "🫧", "tagline": "Spin speed, load size, energy ratings", "keywords": ["laundry", "washer", "clothes"] },
+      { "id": "tumble-dryer", "name": "Tumble Dryer", "icon": "🌀", "tagline": "Heat pump vs condenser vs vented", "keywords": ["laundry", "drying", "clothes"] },
+      { "id": "dishwasher", "name": "Dishwasher", "icon": "🍽️", "tagline": "Slimline vs full-size, noise levels", "keywords": ["dishes", "kitchen", "cleaning"] },
+      { "id": "fridge-freezer", "name": "Fridge Freezer", "icon": "❄️", "tagline": "American style, frost free, energy class", "keywords": ["refrigerator", "kitchen", "food storage"] },
+      { "id": "oven", "name": "Oven & Cooker", "icon": "🔥", "tagline": "Gas, electric, induction, fan vs conventional", "keywords": ["cooking", "hob", "range", "kitchen"] },
+      { "id": "microwave", "name": "Microwave", "icon": "📡", "tagline": "Solo vs grill vs combi, wattage guide", "keywords": ["kitchen", "cooking", "heating"] },
+      { "id": "air-fryer", "name": "Air Fryer", "icon": "🍟", "tagline": "Basket vs oven, capacity, dual zone", "keywords": ["cooking", "kitchen", "ninja", "healthy"] },
+      { "id": "kettle", "name": "Kettle", "icon": "☕", "tagline": "Rapid boil, temperature control, keep warm", "keywords": ["tea", "coffee", "kitchen", "boiling"] },
+      { "id": "coffee-machine", "name": "Coffee Machine", "icon": "☕", "tagline": "Bean-to-cup, pod, espresso, filter", "keywords": ["espresso", "nespresso", "barista", "kitchen"] },
+      { "id": "vacuum-cleaner", "name": "Vacuum Cleaner", "icon": "🧹", "tagline": "Cordless vs corded, Dyson alternatives", "keywords": ["hoover", "cleaning", "dyson", "shark"] },
+      { "id": "iron", "name": "Iron & Steamer", "icon": "👔", "tagline": "Steam generator vs travel vs garment steamer", "keywords": ["clothes", "pressing", "wrinkles"] }
+    ]
+  },
+  {
+    "name": "Technology",
+    "icon": "💻",
+    "items": [
+      { "id": "laptop", "name": "Laptop", "icon": "💻", "tagline": "Specs decoded, work vs gaming vs creative", "keywords": ["computer", "macbook", "chromebook", "notebook"] },
+      { "id": "desktop-pc", "name": "Desktop PC", "icon": "🖥️", "tagline": "Pre-built vs custom build, specs guide", "keywords": ["computer", "gaming pc", "workstation", "build"] },
+      { "id": "build-pc", "name": "Build Your Own PC", "icon": "🔧", "tagline": "CPU, GPU, RAM, storage — parts picker", "keywords": ["custom", "gaming", "components", "motherboard"] },
+      { "id": "tablet", "name": "Tablet", "icon": "📱", "tagline": "iPad vs Android vs Windows, size & stylus", "keywords": ["ipad", "samsung tab", "drawing"] },
+      { "id": "phone", "name": "Smartphone", "icon": "📲", "tagline": "iPhone vs Android, camera, battery life", "keywords": ["mobile", "iphone", "samsung", "pixel"] },
+      { "id": "tv", "name": "Television", "icon": "📺", "tagline": "OLED vs QLED, size guide, smart TV", "keywords": ["telly", "screen", "samsung", "lg"] },
+      { "id": "camera", "name": "Camera", "icon": "📷", "tagline": "DSLR, mirrorless, action cam, vlogging", "keywords": ["photography", "sony", "canon", "nikon", "gopro"] },
+      { "id": "headphones", "name": "Headphones", "icon": "🎧", "tagline": "Over-ear, in-ear, noise cancelling, wireless", "keywords": ["earbuds", "airpods", "sony", "audio"] },
+      { "id": "speaker", "name": "Speaker", "icon": "🔊", "tagline": "Bluetooth, smart, soundbar, multi-room", "keywords": ["sonos", "audio", "music", "alexa"] },
+      { "id": "smartwatch", "name": "Smartwatch", "icon": "⌚", "tagline": "Apple Watch vs Garmin vs fitness trackers", "keywords": ["fitness", "watch", "health", "tracker"] },
+      { "id": "gaming-console", "name": "Games Console", "icon": "🎮", "tagline": "PS5, Xbox, Switch, Steam Deck compared", "keywords": ["playstation", "nintendo", "gaming"] },
+      { "id": "printer", "name": "Printer", "icon": "🖨️", "tagline": "Inkjet vs laser, running costs, scanning", "keywords": ["printing", "scanner", "office"] },
+      { "id": "router", "name": "Wi-Fi Router", "icon": "📶", "tagline": "Mesh vs traditional, Wi-Fi 6/7, coverage", "keywords": ["internet", "wifi", "networking", "mesh"] }
+    ]
+  },
+  {
+    "name": "Furniture & Home",
+    "icon": "🪑",
+    "items": [
+      { "id": "sofa", "name": "Sofa", "icon": "🛋️", "tagline": "Fabric vs leather, L-shape, recliner, size", "keywords": ["couch", "settee", "living room", "seating"] },
+      { "id": "mattress", "name": "Mattress", "icon": "🛏️", "tagline": "Memory foam, spring, hybrid, firmness", "keywords": ["bed", "sleep", "bedroom", "emma"] },
+      { "id": "bed-frame", "name": "Bed Frame", "icon": "🛏️", "tagline": "Divan, ottoman storage, wooden, metal", "keywords": ["bedroom", "furniture", "storage"] },
+      { "id": "dining-table", "name": "Dining Table", "icon": "🪑", "tagline": "Size guide, extendable, material choices", "keywords": ["kitchen", "eating", "chairs", "furniture"] },
+      { "id": "desk", "name": "Desk", "icon": "🪑", "tagline": "Standing, L-shaped, compact, ergonomic", "keywords": ["office", "work from home", "computer desk"] },
+      { "id": "office-chair", "name": "Office Chair", "icon": "💺", "tagline": "Ergonomic, lumbar support, mesh vs leather", "keywords": ["seating", "work", "herman miller"] },
+      { "id": "wardrobe", "name": "Wardrobe", "icon": "🚪", "tagline": "Sliding, fitted, freestanding, storage", "keywords": ["clothes", "bedroom", "storage"] },
+      { "id": "bookshelf", "name": "Bookshelf", "icon": "📚", "tagline": "Freestanding, wall-mounted, cube storage", "keywords": ["storage", "shelving", "living room"] }
+    ]
+  },
+  {
+    "name": "Garden & Outdoors",
+    "icon": "🌿",
+    "items": [
+      { "id": "lawnmower", "name": "Lawnmower", "icon": "🌱", "tagline": "Robot, cordless, petrol, cylinder vs rotary", "keywords": ["grass", "garden", "lawn", "mowing"] },
+      { "id": "pressure-washer", "name": "Pressure Washer", "icon": "💦", "tagline": "Bar pressure, flow rate, accessories", "keywords": ["cleaning", "patio", "car wash", "karcher"] },
+      { "id": "bbq", "name": "BBQ & Grill", "icon": "🍖", "tagline": "Charcoal vs gas vs pellet vs kamado", "keywords": ["barbecue", "grilling", "outdoor cooking", "weber"] },
+      { "id": "hot-tub", "name": "Hot Tub", "icon": "🛁", "tagline": "Inflatable vs hard shell, jets, running costs", "keywords": ["spa", "jacuzzi", "garden", "relaxation"] },
+      { "id": "garden-furniture", "name": "Garden Furniture", "icon": "☀️", "tagline": "Rattan, wood, metal, weatherproof sets", "keywords": ["patio", "outdoor", "seating", "table"] }
+    ]
+  },
+  {
+    "name": "Transport",
+    "icon": "🚗",
+    "items": [
+      { "id": "car", "name": "Car", "icon": "🚗", "tagline": "New vs used, petrol vs electric, financing", "keywords": ["vehicle", "auto", "driving", "ev", "hybrid"] },
+      { "id": "electric-car", "name": "Electric Car", "icon": "⚡", "tagline": "Range, charging, running costs, grants", "keywords": ["ev", "tesla", "charging", "battery"] },
+      { "id": "ebike", "name": "E-Bike", "icon": "🚲", "tagline": "Range, motor type, commuting vs mountain", "keywords": ["electric bike", "cycling", "commute"] },
+      { "id": "escooter", "name": "Electric Scooter", "icon": "🛴", "tagline": "Range, speed, legality, folding", "keywords": ["scooter", "commute", "transport"] },
+      { "id": "dashcam", "name": "Dash Cam", "icon": "📹", "tagline": "Front & rear, 4K, parking mode, GPS", "keywords": ["car camera", "driving", "safety"] }
+    ]
+  },
+  {
+    "name": "Health & Beauty",
+    "icon": "💄",
+    "items": [
+      { "id": "skincare", "name": "Skincare", "icon": "🧴", "tagline": "Ingredients decoded, skin type matching", "keywords": ["cream", "moisturiser", "serum", "face", "beauty"] },
+      { "id": "electric-toothbrush", "name": "Electric Toothbrush", "icon": "🪥", "tagline": "Sonic vs oscillating, brush heads, timers", "keywords": ["dental", "oral-b", "sonicare", "teeth"] },
+      { "id": "hair-dryer", "name": "Hair Dryer", "icon": "💨", "tagline": "Ionic, diffuser, Dyson alternatives", "keywords": ["hair", "styling", "beauty"] },
+      { "id": "shaver", "name": "Electric Shaver", "icon": "🪒", "tagline": "Foil vs rotary, wet/dry, trimming", "keywords": ["razor", "grooming", "beard"] },
+      { "id": "supplements", "name": "Supplements & Vitamins", "icon": "💊", "tagline": "What you actually need vs marketing hype", "keywords": ["health", "vitamins", "protein", "nutrition"] }
+    ]
+  },
+  {
+    "name": "Food & Drink",
+    "icon": "🍕",
+    "items": [
+      { "id": "wine", "name": "Wine", "icon": "🍷", "tagline": "Grape varieties, regions, food pairing", "keywords": ["red", "white", "rose", "alcohol", "drinking"] },
+      { "id": "whisky", "name": "Whisky", "icon": "🥃", "tagline": "Scotch, bourbon, Japanese, tasting notes", "keywords": ["whiskey", "spirits", "alcohol", "drinking"] },
+      { "id": "coffee-beans", "name": "Coffee Beans", "icon": "☕", "tagline": "Roast levels, origins, brewing methods", "keywords": ["espresso", "filter", "specialty", "drinking"] },
+      { "id": "tea", "name": "Tea", "icon": "🍵", "tagline": "Loose leaf, green, herbal, brewing guide", "keywords": ["chai", "matcha", "drinking", "infusion"] },
+      { "id": "olive-oil", "name": "Olive Oil", "icon": "🫒", "tagline": "Extra virgin, cold pressed, tasting", "keywords": ["cooking", "food", "italian", "spanish"] },
+      { "id": "chocolate", "name": "Chocolate", "icon": "🍫", "tagline": "Cacao percentage, bean-to-bar, tasting", "keywords": ["food", "sweets", "cocoa", "artisan"] }
+    ]
+  },
+  {
+    "name": "Sports & Fitness",
+    "icon": "🏋️",
+    "items": [
+      { "id": "running-shoes", "name": "Running Shoes", "icon": "👟", "tagline": "Gait analysis, cushioning, trail vs road", "keywords": ["trainers", "nike", "adidas", "jogging"] },
+      { "id": "gym-equipment", "name": "Home Gym Equipment", "icon": "🏋️", "tagline": "Dumbbells, bench, rack, space-saving", "keywords": ["weights", "fitness", "exercise", "training"] },
+      { "id": "bicycle", "name": "Bicycle", "icon": "🚴", "tagline": "Road, mountain, hybrid, frame sizing", "keywords": ["cycling", "bike", "riding"] },
+      { "id": "treadmill", "name": "Treadmill", "icon": "🏃", "tagline": "Folding, incline, max speed, belt size", "keywords": ["running", "cardio", "gym", "fitness"] }
+    ]
+  },
+  {
+    "name": "Kids & Baby",
+    "icon": "👶",
+    "items": [
+      { "id": "pushchair", "name": "Pushchair / Pram", "icon": "👶", "tagline": "Travel system, lightweight, all-terrain", "keywords": ["stroller", "buggy", "baby", "toddler"] },
+      { "id": "car-seat", "name": "Car Seat", "icon": "🚗", "tagline": "I-Size, group ratings, ISOFIX, spinning", "keywords": ["baby", "child", "safety", "travel"] },
+      { "id": "toys", "name": "Toys & Games", "icon": "🧸", "tagline": "Age-appropriate, educational, STEM", "keywords": ["kids", "children", "playing", "lego"] }
+    ]
+  },
+  {
+    "name": "Pets",
+    "icon": "🐾",
+    "items": [
+      { "id": "dog-food", "name": "Dog Food", "icon": "🐕", "tagline": "Raw, dry, wet, grain-free, breed-specific", "keywords": ["pet food", "kibble", "nutrition"] },
+      { "id": "cat-food", "name": "Cat Food", "icon": "🐱", "tagline": "Wet vs dry, indoor cat, age-specific", "keywords": ["pet food", "kitten", "nutrition"] },
+      { "id": "pet-insurance", "name": "Pet Insurance", "icon": "🏥", "tagline": "Lifetime vs annual, excess, coverage", "keywords": ["vet", "health", "policy"] }
+    ]
+  }
+]

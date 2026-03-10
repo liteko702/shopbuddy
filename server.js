@@ -17,11 +17,37 @@ fs.readdirSync(categoriesDir).forEach(file => {
   }
 });
 
-// API: List all categories
+// Full catalogue of browsable categories (loaded ones + planned)
+const catalogue = require('./data/catalogue.json');
+
+// API: List all categories (full catalogue with groups)
 app.get('/api/categories', (req, res) => {
-  res.json(Object.values(categories).map(c => ({
-    id: c.id, name: c.name, icon: c.icon, tagline: c.tagline
-  })));
+  // Mark which ones are live (have full data)
+  const result = catalogue.map(group => ({
+    ...group,
+    items: group.items.map(item => ({
+      ...item,
+      live: !!categories[item.id]
+    }))
+  }));
+  res.json(result);
+});
+
+// API: Search across all categories
+app.get('/api/search', (req, res) => {
+  const q = (req.query.q || '').toLowerCase().trim();
+  if (!q) return res.json([]);
+
+  const results = [];
+  catalogue.forEach(group => {
+    group.items.forEach(item => {
+      const searchable = `${item.name} ${item.tagline} ${(item.keywords || []).join(' ')}`.toLowerCase();
+      if (searchable.includes(q)) {
+        results.push({ ...item, group: group.name, live: !!categories[item.id] });
+      }
+    });
+  });
+  res.json(results);
 });
 
 // API: Get full category data
