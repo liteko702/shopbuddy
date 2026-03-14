@@ -154,4 +154,49 @@ app.post('/api/recommend/:id', (req, res) => {
   res.json({ topPick: bestMatch, upgrade: upgrade || null, savingOption: downgrade || null, allRanked: scored, answeredBudget: budget, tier: cat.tiers[budget] });
 });
 
+// Wiki route — renders docs/WIKI.md as a readable web page
+app.get('/wiki', (req, res) => {
+  const md = fs.readFileSync(path.join(__dirname, 'docs', 'WIKI.md'), 'utf8');
+  const html = md
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+    .replace(/^\s*[-*] (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>(\n|$))+/gs, m => `<ul>${m}</ul>`)
+    .replace(/^---+$/gm, '<hr>')
+    .replace(/\n{2,}/g, '</p><p>')
+    .replace(/^(?!<[hbupcli])/gm, '');
+  res.send(`<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>🛒 ShopBuddy — Wiki</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0e0e12;color:#e0e0e8;line-height:1.7;padding:0}
+    .wrap{max-width:860px;margin:0 auto;padding:40px 24px}
+    h1{font-size:2em;color:#a78bfa;margin:0 0 8px}
+    h2{font-size:1.4em;color:#c4b5fd;margin:36px 0 12px;padding-bottom:6px;border-bottom:1px solid #2a2a3a}
+    h3{font-size:1.1em;color:#e0e0e8;margin:24px 0 8px}
+    h4{font-size:1em;color:#a0a0b8;margin:16px 0 6px}
+    p{color:#b0b0c4;margin:8px 0}
+    ul{padding-left:20px;margin:8px 0}
+    li{color:#b0b0c4;margin:4px 0}
+    code{background:#1a1a26;border:1px solid #2a2a3a;padding:2px 6px;border-radius:4px;font-size:0.88em;color:#f9a8d4}
+    blockquote{border-left:3px solid #a78bfa;padding:8px 16px;background:#1a1a26;border-radius:0 8px 8px 0;color:#c4b5fd;margin:12px 0}
+    a{color:#a78bfa;text-decoration:none}a:hover{text-decoration:underline}
+    hr{border:none;border-top:1px solid #2a2a3a;margin:28px 0}
+    strong{color:#e0e0e8}
+    .back{display:inline-block;margin-bottom:28px;background:#1a1a26;border:1px solid #2a2a3a;padding:8px 18px;border-radius:20px;color:#a78bfa;font-size:0.9em}
+  </style>
+</head><body><div class="wrap">
+  <a class="back" href="/">← Back to ShopBuddy</a>
+  <p>${html}</p>
+</div></body></html>`);
+});
+
 app.listen(PORT, '0.0.0.0', () => console.log(`🛒 ShopBuddy running on port ${PORT}`));
