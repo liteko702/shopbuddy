@@ -238,6 +238,8 @@ function renderBuddy() {
         </div>
       `).join('')}
 
+      ${currentCat.phasedBuildGuide ? renderPhasedGuide(currentCat.phasedBuildGuide) : ''}
+
       <div style="text-align:center;margin-top:24px">
         <button class="btn btn-primary" onclick="goPhase('jargon')" style="padding:14px 40px;font-size:1.05em">
           Got it — show me the jargon buster →
@@ -565,4 +567,74 @@ function renderResults(data) {
   document.getElementById('resultsArea').innerHTML = html;
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderPhasedGuide(guide) {
+  const phaseColors = ['#a78bfa', '#34d399', '#60a5fa', '#f59e0b'];
+  return `
+    <div class="phased-guide">
+      <div class="phased-header">
+        <h2>${guide.title}</h2>
+        <p>${guide.intro}</p>
+        <div class="platform-badge">
+          <span class="p-icon">🏗️</span>
+          <div>
+            <strong>${guide.targetBuild.name}</strong>
+            <span>${guide.targetBuild.why}</span>
+          </div>
+        </div>
+      </div>
+
+      ${guide.phases.map((phase, i) => `
+        <div class="phase-card" style="border-left: 3px solid ${phaseColors[i % phaseColors.length]}">
+          <div class="phase-title">
+            <span class="phase-emoji">${phase.emoji}</span>
+            <div>
+              <h3>Phase ${phase.phase}: ${phase.title}</h3>
+              <p class="phase-sub">${phase.subtitle}</p>
+            </div>
+            <div class="phase-meta">
+              <span class="phase-cost">${phase.cost}</span>
+              <span class="phase-time">${phase.timeline}</span>
+            </div>
+          </div>
+          <p class="phase-what">${phase.what}</p>
+          ${phase.parts ? `
+            <div class="phase-parts">
+              ${phase.parts.map(p => `
+                <div class="phase-part">
+                  <span class="part-comp">${p.component}</span>
+                  <div class="part-detail">
+                    <strong>${p.pick}</strong>
+                    <span class="part-price">${p.price}</span>
+                  </div>
+                  <p class="part-note">${p.note}</p>
+                  <span class="part-where">📦 ${p.where}</span>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+          ${phase.total ? `<div class="phase-total">Phase total: <strong>${phase.total}</strong></div>` : ''}
+          <div class="phase-result">✅ ${phase.result}</div>
+          ${phase.tip ? `<div class="phase-tip">💡 ${phase.tip}</div>` : ''}
+        </div>
+      `).join('')}
+
+      <div class="phase-summary">
+        <h3>💰 Total Cost Summary</h3>
+        <div class="cost-table">
+          <div class="cost-row"><span>Phase 1 — Working PC (immediately)</span><strong>${guide.totalCost.phase1}</strong></div>
+          <div class="cost-row"><span>Phase 2 — GPU (gaming unlock)</span><strong>${guide.totalCost.phase2}</strong></div>
+          <div class="cost-row"><span>Phase 3 — Monitor + peripherals</span><strong>${guide.totalCost.phase3}</strong></div>
+          <div class="cost-row total"><span>Grand Total</span><strong>${guide.totalCost.grandTotal}</strong></div>
+        </div>
+        <p class="cost-note">${guide.totalCost.comparison}</p>
+      </div>
+
+      <div class="phase-shopping">
+        <h3>🛒 Shopping Order Tips</h3>
+        <ol>${guide.shoppingOrder.map(tip => `<li>${tip}</li>`).join('')}</ol>
+      </div>
+    </div>
+  `;
 }

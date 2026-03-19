@@ -558,5 +558,109 @@
     "mid": { "label": "1080p Gaming / All-rounder", "range": "£500-900", "icon": "⭐", "description": "Solid gaming at 1080p, good for everything else. Best value." },
     "premium": { "label": "1440p Gaming / Creative", "range": "£900-1,500", "icon": "💎", "description": "Excellent 1440p gaming, great for video editing and creative work." },
     "flagship": { "label": "4K / Enthusiast", "range": "£1,500+", "icon": "👑", "description": "Maximum performance. 4K gaming, professional workstation." }
+  },
+
+  "phasedBuildGuide": {
+    "title": "🗓️ Build Over Time — Work + High-Level Gaming",
+    "intro": "You don't have to buy everything at once. This guide shows you how to build a powerful work + gaming PC in phases, so you can spread the cost over several months. The trick is choosing the RIGHT platform first — a foundation that can grow with you.",
+    "targetBuild": {
+      "name": "The Recommended Platform: AM5 (AMD Ryzen 9000 series)",
+      "why": "AM5 is AMD's latest platform and will be supported until at least 2028. That means you can upgrade your CPU later without changing the motherboard. It supports DDR5 RAM, PCIe 5.0 graphics, and the fastest NVMe storage. Starting here means nothing goes to waste.",
+      "socket": "AM5",
+      "supportedUntil": "2028+",
+      "platform": "AMD Ryzen 9000 series + B850/X870 motherboard"
+    },
+    "phases": [
+      {
+        "phase": 1,
+        "title": "The Foundation",
+        "subtitle": "A fully working PC for work — right now",
+        "emoji": "🏗️",
+        "cost": "~£840",
+        "timeline": "Month 1",
+        "what": "You get a real, working computer. The Ryzen 7 8700G has integrated graphics powerful enough for all work tasks, web browsing, streaming, and even light 1080p gaming (Minecraft, older titles, Rocket League). You won't be playing Cyberpunk yet — but you're up and running.",
+        "parts": [
+          { "component": "CPU", "pick": "AMD Ryzen 7 8700G", "price": "£290", "note": "8 cores + built-in Radeon 780M graphics. The KEY choice — lets you run without a GPU card.", "where": "Scan, Amazon, CCL" },
+          { "component": "Motherboard", "pick": "MSI B850 Tomahawk WiFi", "price": "£160", "note": "AM5 socket. Wi-Fi 7 built in. Future-proof platform — supports all future Ryzen chips.", "where": "Scan, Overclockers" },
+          { "component": "RAM", "pick": "32GB DDR5-6000 (2×16GB) G.Skill Flare X5", "price": "£90", "note": "32GB because work + gaming both benefit. DDR5-6000 is ideal for Ryzen.", "where": "Amazon, Scan" },
+          { "component": "Storage", "pick": "2TB Samsung 990 Pro NVMe Gen 4", "price": "£120", "note": "2TB right away — room for games AND work files without worrying about space.", "where": "Amazon, Scan" },
+          { "component": "PSU", "pick": "Corsair RM850e 850W 80+ Gold", "price": "£95", "note": "850W now — ready for a high-end GPU in Phase 2 without any changes. Don't skimp here.", "where": "Scan, Amazon" },
+          { "component": "Case", "pick": "Fractal Design North (mesh)", "price": "£90", "note": "Excellent airflow, looks great, easy to build in, built to last.", "where": "Scan, Overclockers" },
+          { "component": "CPU Cooler", "pick": "Arctic Liquid Freezer II 240mm AIO", "price": "£55", "note": "The 8700G runs warm under load. A good cooler keeps it quiet and fast.", "where": "Amazon, Scan" }
+        ],
+        "total": "~£900",
+        "result": "You have a quiet, fast, work-ready PC. Handles Office 365, Teams, Chrome, Spotify, coding, Zoom — everything. Can play light games now.",
+        "pcpartpicker": "https://uk.pcpartpicker.com"
+      },
+      {
+        "phase": 2,
+        "title": "The Gaming Upgrade — GPU",
+        "subtitle": "This is where it becomes a high-level gaming machine",
+        "emoji": "🎮",
+        "cost": "~£550–600",
+        "timeline": "Month 2–4 (whenever budget allows)",
+        "what": "Plug in a discrete graphics card and your PC transforms. The 8700G stays as the CPU — the GPU does all the gaming work now. The 850W PSU you bought in Phase 1 handles this easily. No other changes needed.",
+        "parts": [
+          { "component": "GPU (Option A)", "pick": "AMD RX 9070 XT 16GB", "price": "£560", "note": "BEST VALUE in 2026. 16GB VRAM is future-proof. Excellent 1440p at max settings. Our top pick.", "where": "Overclockers, Scan" },
+          { "component": "GPU (Option B)", "pick": "NVIDIA RTX 5070 12GB", "price": "£550", "note": "Slightly faster in some games. DLSS 4 is excellent. 12GB VRAM (less future-proof than AMD).", "where": "Scan, Overclockers" },
+          { "component": "GPU (Option C — wait for it)", "pick": "NVIDIA RTX 5080 16GB", "price": "£950", "note": "If you want top-tier gaming (4K ultra). Costs more but is significantly faster.", "where": "Scan (when in stock)" }
+        ],
+        "total": "£550–950 depending on GPU choice",
+        "result": "1440p gaming at high/ultra settings in all current games. The RX 9070 XT handles Cyberpunk 2077, Black Ops 6, Elden Ring beautifully at 1440p 60-100fps. With DLSS/FSR, often 100-144fps.",
+        "tip": "Wait for GPU prices to settle if a new launch just happened. GPU prices often drop 5-10% in the weeks after launch."
+      },
+      {
+        "phase": 3,
+        "title": "The Screen & Peripherals",
+        "subtitle": "You need a display worthy of the machine",
+        "emoji": "🖥️",
+        "cost": "~£400–500",
+        "timeline": "Month 3–5",
+        "what": "A great monitor makes a huge difference. You could have the best GPU in the world and still be limited by a bad screen. Match your monitor to your GPU.",
+        "parts": [
+          { "component": "Monitor (our pick)", "pick": "LG 27GP850-B 27\" 1440p 165Hz IPS Nano", "price": "£250", "note": "The classic 1440p gaming monitor. Fast, accurate, great colours. 1ms response.", "where": "Amazon, Currys, John Lewis" },
+          { "component": "Monitor (upgrade)", "pick": "LG 27GS95QE 27\" 1440p 240Hz OLED", "price": "£500", "note": "OLED panel — perfect blacks, incredible contrast. The best 1440p gaming monitor.", "where": "Scan, Amazon" },
+          { "component": "Keyboard", "pick": "Keychron K2 Pro (mechanical)", "price": "£80", "note": "Great for both work and gaming. Wireless or wired. Tactile switches.", "where": "Keychron.co.uk, Amazon" },
+          { "component": "Mouse", "pick": "Logitech G502 X", "price": "£45", "note": "Excellent all-rounder. Precise, comfortable, great for FPS and productivity.", "where": "Amazon, Currys" },
+          { "component": "Headset", "pick": "SteelSeries Arctis Nova 5", "price": "£80", "note": "Wireless, comfortable for long sessions, good mic for Teams calls AND gaming.", "where": "Amazon, Currys" }
+        ],
+        "total": "~£400–700 depending on monitor choice",
+        "result": "A complete, immersive setup. The 1440p 165Hz monitor pairs perfectly with the RX 9070 XT — you'll use every frame it produces."
+      },
+      {
+        "phase": 4,
+        "title": "Future Upgrades (Optional)",
+        "subtitle": "When you want more — in 1–3 years",
+        "emoji": "⬆️",
+        "cost": "Varies",
+        "timeline": "Year 1–3",
+        "what": "The AM5 platform means future upgrades are simple and cheap. Your motherboard and RAM stay. You only replace what you need.",
+        "parts": [
+          { "component": "CPU Upgrade", "pick": "AMD Ryzen 9 9900X or future Ryzen 10000 series", "price": "£350–450", "note": "Drop straight into your AM5 motherboard. Massive CPU performance boost when you need it.", "where": "Scan, CCL" },
+          { "component": "GPU Upgrade", "pick": "Whatever RTX 6000 or RX 10000 series is best value", "price": "£500–800", "note": "In 2-3 years, next-gen cards will be faster and cheaper. Just swap the GPU.", "where": "Overclockers, Scan" },
+          { "component": "More Storage", "pick": "2nd NVMe SSD (2TB)", "price": "£80–120", "note": "Your B850 board has multiple M.2 slots. Easy to add more storage.", "where": "Amazon" },
+          { "component": "RAM Upgrade", "pick": "64GB DDR5 if doing video editing", "price": "£150–200", "note": "Only if you start doing heavy video editing or 3D work.", "where": "Amazon, Scan" }
+        ],
+        "total": "Only upgrade what you need",
+        "result": "Your PC stays modern for 4–6 years total, spending money only where it makes a difference. The case, PSU, and motherboard last the whole time."
+      }
+    ],
+    "totalCost": {
+      "phase1": "~£900 (working PC immediately)",
+      "phase2": "~£550–600 (gaming powerhouse)",
+      "phase3": "~£400–500 (complete setup)",
+      "phase4": "Optional future upgrades",
+      "grandTotal": "~£1,850–2,000 total for a full high-level gaming + work machine",
+      "comparison": "A pre-built gaming PC at this level costs £1,800–2,200 and is harder to upgrade. Building over time gives you better value and a machine that lasts longer."
+    },
+    "shoppingOrder": [
+      "Start on PCPartPicker UK (uk.pcpartpicker.com) — build your parts list and check compatibility",
+      "Buy CPU + Motherboard together — check for bundle deals at Scan or CCL (saves £10–30)",
+      "Buy RAM from Amazon — usually the cheapest",
+      "Buy SSD from Amazon or Ebuyer — prices fluctuate, wait for a deal",
+      "Buy PSU and Case from Scan — usually competitive and they often bundle",
+      "Buy GPU from Overclockers — best GPU stock in the UK",
+      "Buy monitor from Amazon, Currys, or John Lewis (price match guarantee)"
+    ]
   }
 }

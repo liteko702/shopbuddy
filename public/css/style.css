@@ -197,3 +197,50 @@
     .pick-card .pick-desc { color: var(--text2); font-size: 0.85em; margin-bottom: 10px; }
     .pick-card .pick-icons { display: flex; gap: 6px; flex-wrap: wrap; }
     .pick-cat { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 4px 10px; font-size: 0.78em; color: var(--text2); }
+
+    /* Phased Build Guide */
+    .phased-guide { margin: 32px 0; }
+    .phased-header { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 20px; }
+    .phased-header h2 { color: var(--accent); margin-bottom: 10px; }
+    .phased-header p { color: var(--text2); margin-bottom: 16px; }
+    .platform-badge { display: flex; gap: 14px; align-items: flex-start; background: var(--bg); border-radius: 10px; padding: 14px; }
+    .platform-badge .p-icon { font-size: 1.6em; flex-shrink: 0; }
+    .platform-badge strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .platform-badge span { color: var(--text2); font-size: 0.88em; }
+
+    .phase-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 16px; }
+    .phase-title { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; }
+    .phase-emoji { font-size: 2em; flex-shrink: 0; }
+    .phase-title h3 { color: var(--text); font-size: 1.15em; margin-bottom: 2px; }
+    .phase-sub { color: var(--text2); font-size: 0.88em; }
+    .phase-meta { margin-left: auto; text-align: right; flex-shrink: 0; }
+    .phase-cost { display: block; color: var(--accent); font-weight: 700; font-size: 1.1em; }
+    .phase-time { display: block; color: var(--text2); font-size: 0.8em; margin-top: 2px; }
+    .phase-what { color: var(--text2); margin-bottom: 16px; line-height: 1.6; }
+
+    .phase-parts { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .phase-part { background: var(--bg); border-radius: 10px; padding: 12px 14px; }
+    .part-comp { display: inline-block; background: var(--surface2); color: var(--text2); font-size: 0.75em; font-weight: 600; padding: 2px 8px; border-radius: 6px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .part-detail { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .part-detail strong { color: var(--text); font-size: 0.95em; }
+    .part-price { color: var(--green); font-weight: 700; font-size: 0.95em; flex-shrink: 0; }
+    .part-note { color: var(--text2); font-size: 0.85em; margin: 4px 0; }
+    .part-where { color: var(--text2); font-size: 0.8em; }
+
+    .phase-total { background: var(--surface2); border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; color: var(--text); font-size: 0.95em; }
+    .phase-result { color: #4ade80; font-size: 0.92em; font-weight: 500; }
+    .phase-tip { color: var(--accent2); font-size: 0.88em; margin-top: 8px; padding: 10px 14px; background: rgba(167,139,250,0.08); border-radius: 8px; }
+
+    .phase-summary { background: var(--surface); border: 1px solid var(--accent); border-radius: 14px; padding: 22px; margin: 20px 0; }
+    .phase-summary h3 { color: var(--accent); margin-bottom: 14px; }
+    .cost-table { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); color: var(--text2); font-size: 0.9em; }
+    .cost-row strong { color: var(--green); }
+    .cost-row.total { border-bottom: none; border-top: 2px solid var(--border); margin-top: 4px; padding-top: 12px; font-size: 1em; color: var(--text); }
+    .cost-row.total strong { color: var(--accent); font-size: 1.1em; }
+    .cost-note { color: var(--text2); font-size: 0.88em; }
+
+    .phase-shopping { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+    .phase-shopping h3 { color: var(--text); margin-bottom: 14px; }
+    .phase-shopping ol { padding-left: 20px; }
+    .phase-shopping li { color: var(--text2); margin-bottom: 8px; font-size: 0.9em; line-height: 1.5; }
